@@ -1384,25 +1384,4 @@ Terima kasih.
 
 ---
 
-## Catatan Penyajian untuk Diskusi Kelas
-
-**Pertanyaan pemantik yang bisa dilempar:**
-1. Apakah target 80 ribu koperasi baru akan mengulangi pola "jumlah tanpa kualitas"? Mengapa?
-2. Mengapa koperasi Indonesia absen dari Top 300 World Co-operative Monitor padahal jumlahnya terbanyak di dunia?
-3. Apakah koperasi yang hanya menjadi "agen bank" kehilangan karakteristik koperasinya?
-4. Bagaimana koperasi harus menyikapi TWP90 industri pindar yang mendekati 5%?
-5. Siapa yang seharusnya memiliki data transaksi ekonomi desa?
-
-**Data kunci untuk hafalan (jika ditanya tanpa slide):**
-- Kontribusi koperasi terhadap PDB: **1,17%**
-- Jumlah koperasi aktif: **131.617** (BPS 2024)
-- KDMP berbadan hukum: **81.485**; peresmian **80.081** (21 Juli 2025)
-- Outstanding LPBBTI: **Rp106,94 triliun** (Agustus 2026)
-- Pembiayaan BRI ke KDMP: **Rp1,2 triliun ke 306 koperasi** (September 2025)
-- QRIS: **12,55 miliar transaksi / Rp600,69 triliun** (Semester I 2026)
-- SNLIK 2026: literasi **69,57%**, inklusi **93,61%**, literasi fintech **24,90%**
-- Regulasi inti: **Inpres 9/2025, UU P2SK, POJK 40/2024, SEOJK 19/2025, POJK 47/2024**
-
----
-
 **— AKHIR MAKALAH —**
