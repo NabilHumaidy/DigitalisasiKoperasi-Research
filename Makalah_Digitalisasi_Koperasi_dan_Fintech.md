@@ -1,18 +1,6 @@
 # STRATEGI MODERNISASI DAN DIGITALISASI KOPERASI, DIGITALISASI LAYANAN KOPERASI (KOPERASI MODERN), DAN INTEGRASI TEKNOLOGI KEUANGAN (FINTECH)
 
-### Makalah Mata Kuliah Manajemen Koperasi
-
 **Tanggal penyusunan:** 12–13 Oktober 2026
-
----
-
-## KATA PENGANTAR
-
-Puji syukur penyusun panjatkan ke hadirat Tuhan Yang Maha Esa atas terselesaikannya makalah yang berjudul **"Strategi Modernisasi dan Digitalisasi Koperasi, Digitalisasi Layanan Koperasi (Koperasi Modern), dan Integrasi Teknologi Keuangan (Fintech)"**. Makalah ini disusun untuk memenuhi tugas mata kuliah Manajemen Koperasi.
-
-Dalam makalah ini, penyusun mengangkat tiga tema utama yang saling berkaitan: bagaimana strategi pemerintah dalam melakukan modernisasi dan digitalisasi koperasi, bagaimana wujud nyata digitalisasi layanan koperasi menjadi "koperasi modern", serta bagaimana integrasi teknologi keuangan (fintech) dilakukan bersama koperasi. Seluruh data dan informasi dalam makalah ini bersumber dari riset literatur pada situs-situs resmi pemerintah, otoritas keuangan, media kredibel, dan laporan internasional, dengan tahun data prioritas 2024–2026.
-
-Penyusun menyadari bahwa makalah ini masih jauh dari kesempurnaan. Oleh karena itu, kritik dan saran yang membangun sangat diharapkan demi perbaikan ke depannya.
 
 ---
 
