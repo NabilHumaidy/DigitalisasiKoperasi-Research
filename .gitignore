@@ -1,0 +1,6 @@
+# Session/plugin data
+.claude/
+
+# Python bytecode cache
+__pycache__/
+*.pyc
