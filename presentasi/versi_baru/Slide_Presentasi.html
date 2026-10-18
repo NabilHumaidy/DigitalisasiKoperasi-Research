@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Strategi Digitalisasi Koperasi &amp; Integrasi Fintech — Slide Presentasi</title>
+<style>
+  :root{
+    --navy:#051C2C;
+    --navy-2:#123B5C;
+    --blue:#2566A5;
+    --blue-2:#5B8CBE;
+    --blue-3:#A8C4DE;
+    --blue-bg:#EAF1F7;
+    --ink:#16222E;
+    --body:#33414F;
+    --muted:#667483;
+    --faint:#8C99A6;
+    --line:#C7D1DA;
+    --line-2:#E2E8EE;
+    --bg:#FFFFFF;
+    --soft:#F4F6F8;
+    --soft-2:#F8FAFB;
+    --red:#A32A24;
+    --red-bg:#F7EBEA;
+    --green:#2E6B4F;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#fff;font-family:"Segoe UI","Helvetica Neue",Helvetica,Arial,sans-serif;color:var(--ink);}
+  .num{font-variant-numeric:tabular-nums lining-nums}
+  @page{size:1280px 720px;margin:0}
+  .deck{width:1280px}
+
+  .slide{
+    position:relative;width:1280px;height:720px;overflow:hidden;background:#fff;
+    padding:44px 56px 62px;
+    page-break-after:always;
+    display:flex;flex-direction:column;
+  }
+  .slide:last-child{page-break-after:auto}
+
+  /* ---------- header ---------- */
+  .kicker{font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--blue);font-weight:700}
+  .t{font-size:29px;line-height:1.14;font-weight:700;letter-spacing:-.011em;color:var(--navy);margin-top:6px}
+  .st{font-size:13px;color:var(--body);line-height:1.45;margin-top:9px;max-width:100ch}
+  .rule{height:2px;width:54px;background:var(--navy);margin-top:10px}
+
+  /* ---------- footer & source ---------- */
+  .foot{
+    position:absolute;left:56px;right:56px;bottom:20px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid var(--line);padding-top:7px;
+    font-size:9px;color:var(--faint);letter-spacing:.05em;
+  }
+  .foot .pg{font-weight:700;color:var(--muted)}
+  .src{position:absolute;left:56px;right:56px;bottom:38px;font-size:8.5px;color:var(--faint);font-style:italic;line-height:1.5}
+
+  /* ---------- KPI strip ---------- */
+  .kpi-row{display:flex;border-top:2px solid var(--navy);border-bottom:1px solid var(--line)}
+  .kpi{flex:1;padding:9px 14px;border-right:1px solid var(--line-2)}
+  .kpi:last-child{border-right:none}
+  .kpi .v{font-size:22px;font-weight:700;color:var(--navy);letter-spacing:-.015em;line-height:1.1}
+  .kpi .v small{font-size:12px;font-weight:600;color:var(--blue-2)}
+  .kpi .l{font-size:9px;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);font-weight:600;margin-top:3px;line-height:1.35}
+
+  /* ---------- layout ---------- */
+  .row{display:flex;gap:26px;flex:1;min-height:0}
+  .col{display:flex;flex-direction:column;min-width:0}
+  .grow{flex:1}
+  .mt{margin-top:14px}
+  .mt-s{margin-top:9px}
+
+  /* ---------- chart panel ---------- */
+  .chart{border:1px solid var(--line-2);padding:11px 13px 8px;background:#fff}
+  .chart h5{font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);font-weight:700;margin-bottom:2px}
+  .chart .delta{font-size:10px;color:var(--blue);font-weight:700}
+  .chart .note{font-size:8.5px;color:var(--faint);line-height:1.4;margin-top:4px}
+  .chart svg{display:block;width:100%;height:auto}
+  text{font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif}
+
+  /* ---------- numbered list ---------- */
+  .numlist .item{display:flex;gap:11px;padding:7.5px 0;border-bottom:1px solid var(--line-2)}
+  .numlist .item:last-child{border-bottom:none}
+  .item .n{font-size:12px;font-weight:700;color:var(--blue);width:20px;flex:none;line-height:1.5}
+  .item .tx{font-size:12px;line-height:1.45;color:var(--body)}
+  .item .tx b{color:var(--navy)}
+  .item .tx .ex{color:var(--muted)}
+
+  /* ---------- tags ---------- */
+  .tag{display:inline-block;font-size:8.5px;font-weight:700;letter-spacing:.05em;padding:2px 7px;border:1px solid var(--line);color:var(--muted);text-transform:uppercase;vertical-align:1px}
+  .tag.blue{color:var(--blue);border-color:var(--blue-2);background:var(--blue-bg)}
+  .tag.red{color:var(--red);border-color:#D9B7B3;background:var(--red-bg)}
+
+  /* ---------- bullets ---------- */
+  ul.bl{list-style:none;display:flex;flex-direction:column;gap:8px}
+  ul.bl li{position:relative;padding-left:15px;font-size:12.5px;line-height:1.45;color:var(--body)}
+  ul.bl li::before{content:"";position:absolute;left:0;top:7px;width:6px;height:6px;background:var(--navy)}
+  ul.bl b{color:var(--navy)}
+
+  /* ---------- table ---------- */
+  table.gs{width:100%;border-collapse:collapse;font-size:11px}
+  table.gs th{background:var(--navy);color:#fff;text-align:left;padding:6px 9px;font-size:9px;letter-spacing:.07em;text-transform:uppercase;font-weight:700}
+  table.gs td{padding:6px 9px;border-bottom:1px solid var(--line-2);vertical-align:top;color:var(--body);line-height:1.4}
+  table.gs tr:nth-child(even) td{background:var(--soft-2)}
+  table.gs td b{color:var(--navy)}
+
+  /* ---------- promo band ---------- */
+  .band{border:1px solid var(--line);border-left:4px solid var(--navy);background:var(--soft);padding:10px 14px;font-size:12px;line-height:1.45;color:var(--body)}
+  .band b{color:var(--navy)}
+
+  /* ---------- stat chips row ---------- */
+  .chips{display:flex;gap:0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .chips .c{flex:1;padding:8px 13px;border-right:1px solid var(--line-2)}
+  .chips .c:last-child{border-right:none}
+  .chips .v{font-size:15px;font-weight:700;color:var(--navy);line-height:1.15}
+  .chips .v small{font-size:10px;color:var(--blue-2);font-weight:600}
+  .chips .l{font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-top:2px;line-height:1.3}
+
+  /* ---------- squares rating ---------- */
+  .sq{display:inline-flex;gap:3px;vertical-align:-2px}
+  .sq i{width:9px;height:9px;background:var(--navy);display:block}
+  .sq i.o{background:var(--line)}
+
+  /* ---------- cover ---------- */
+  .cover{background:var(--navy);color:#fff;padding:0}
+  .cover .inner{position:absolute;inset:0;padding:74px 72px 0;display:flex;flex-direction:column}
+  .cover .kk{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-3);font-weight:700}
+  .cover h1{font-size:40px;line-height:1.13;font-weight:700;letter-spacing:-.012em;color:#fff;margin-top:18px;max-width:24ch}
+  .cover .sub{font-size:16px;color:var(--blue-3);margin-top:16px;max-width:60ch;line-height:1.4}
+  .cover .meta{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+  .cover .meta span{font-size:11.5px;color:#D6E1EC;border:1px solid #2A4A68;padding:7px 14px}
+  .cover .rule{height:2px;width:66px;background:var(--blue-2);margin-top:34px}
+  .cover .strip{position:absolute;left:72px;right:72px;bottom:64px;display:flex;border-top:1px solid #2A4A68;border-bottom:1px solid #2A4A68}
+  .cover .strip .s{flex:1;padding:14px 18px;border-right:1px solid #2A4A68}
+  .cover .strip .s:last-child{border-right:none}
+  .cover .strip .v{font-size:23px;font-weight:700;color:#fff;letter-spacing:-.015em}
+  .cover .strip .v small{font-size:12px;color:var(--blue-3);font-weight:600}
+  .cover .strip .l{font-size:9px;letter-spacing:.09em;text-transform:uppercase;color:#7E97AE;font-weight:600;margin-top:3px}
+  .cover .cr{position:absolute;left:72px;right:72px;bottom:30px;font-size:9px;color:#5E7896;letter-spacing:.05em}
+
+  /* ---------- bibliography ---------- */
+  .pth{font-size:9px;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);font-weight:700;
+       border-top:2px solid var(--navy);border-bottom:1px solid var(--line);padding:5px 0 4px;margin-bottom:7px}
+  ol.ref{list-style:none;counter-reset:r}
+  ol.ref li{counter-increment:r;font-size:9px;line-height:1.5;color:var(--body);padding-left:18px;position:relative;margin-bottom:2.5px}
+  ol.ref li::before{content:counter(r);position:absolute;left:0;top:0;font-weight:700;color:var(--blue);font-variant-numeric:tabular-nums}
+  ol.ref li b{color:var(--navy)}
+  ol.ref li i{font-style:italic;color:var(--muted)}
+  ol.ref.tight li{font-size:9px;line-height:1.45;margin-bottom:2px;padding-left:16px}
+
+  /* ---------- closing ---------- */
+  .closing{background:var(--navy);color:#fff;padding:0}
+  .closing .inner{position:absolute;inset:0;padding:110px 96px 0;display:flex;flex-direction:column;justify-content:center}
+  .closing .kk{font-size:10px;letter-spacing:.24em;text-transform:uppercase;color:var(--blue-3);font-weight:700;text-align:center}
+  .closing blockquote{font-family:Georgia,"Times New Roman",serif;font-size:29px;line-height:1.4;color:#fff;text-align:center;max-width:34ch;margin:34px auto 0;font-style:italic}
+  .closing .rule{height:2px;width:66px;background:var(--blue-2);margin:36px auto 0}
+  .closing .thanks{text-align:center;margin-top:26px;font-size:15px;color:var(--blue-3);letter-spacing:.04em}
+  .closing .meta{text-align:center;margin-top:10px;font-size:10px;color:#7E97AE;letter-spacing:.06em}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ===================== SLIDE 1 — COVER ===================== -->
+<section class="slide cover">
+  <div class="inner">
+    <div class="kk">Presentasi Mata Kuliah Manajemen Koperasi</div>
+    <h1>Strategi Modernisasi dan Digitalisasi Koperasi, Digitalisasi Layanan Koperasi, dan Integrasi Teknologi Keuangan (Fintech)</h1>
+    <div class="sub">Upaya digitalisasi layanan koperasi di Indonesia dan integrasinya dengan teknologi keuangan</div>
+    <div class="meta">
+      <span>18 Oktober 2026</span>
+      <span>Studi literatur &middot; data 2020&ndash;2026</span>
+      <span>Sumber: BPS &middot; OJK &middot; Bank Indonesia &middot; Kemenkop &middot; ICA &middot; APJII</span>
+    </div>
+    <div class="rule"></div>
+  </div>
+  <div class="strip">
+    <div class="s"><div class="v num">131.617<small> unit</small></div><div class="l">Koperasi aktif (BPS, 2024)</div></div>
+    <div class="s"><div class="v num">12,55<small> miliar</small></div><div class="l">Transaksi QRIS &middot; Semester I 2026</div></div>
+    <div class="s"><div class="v num">Rp106,94<small> T</small></div><div class="l">Pembiayaan pindar / LPBBTI &middot; Agu 2026</div></div>
+    <div class="s"><div class="v num">Rp22,9<small> T</small></div><div class="l">Pembiayaan LPDB &middot; 2008&ndash;Okt 2026</div></div>
+  </div>
+</section>
+
+<!-- ===================== SLIDE 2 — LATAR BELAKANG ===================== -->
+<section class="slide">
+  <div class="kicker">Pendahuluan &middot; Latar Belakang</div>
+  <h1 class="t">131.617 koperasi aktif &mdash; terbanyak di dunia, kontribusi PDB hanya 1,17%</h1>
+  <div class="rule"></div>
+
+  <div class="mt kpi-row">
+    <div class="kpi"><div class="v num">131.617</div><div class="l">Koperasi aktif, 2024 (BPS) &mdash; terbanyak di dunia</div></div>
+    <div class="kpi"><div class="v num">1,17%</div><div class="l">Kontribusi terhadap PDB (Menkop, Des 2024) &mdash; target 10&ndash;20%</div></div>
+    <div class="kpi"><div class="v num">8,41%</div><div class="l">Partisipasi penduduk sebagai anggota &middot; rata-rata dunia 16,31%</div></div>
+    <div class="kpi"><div class="v num">0</div><div class="l">Koperasi RI di Top 300 World Co-operative Monitor 2025 (US$2,79 T)</div></div>
+  </div>
+
+  <div class="row mt">
+    <div class="col" style="width:350px">
+      <div class="chart">
+        <h5>Jumlah koperasi aktif, 2021&ndash;2024</h5>
+        <svg viewBox="0 0 330 200" role="img" aria-label="bar chart koperasi aktif">
+          <line x1="14" y1="168" x2="316" y2="168" stroke="#C7D1DA" stroke-width="1"/>
+          <rect x="25" y="34.5" width="46" height="133.5" fill="#A8C4DE"/>
+          <rect x="99" y="31.8" width="46" height="136.2" fill="#A8C4DE"/>
+          <rect x="173" y="32.1" width="46" height="135.9" fill="#A8C4DE"/>
+          <rect x="247" y="30.5" width="46" height="137.5" fill="#123B5C"/>
+          <text x="48" y="28.5" text-anchor="middle" font-size="10" font-weight="700" fill="#667483">127.846</text>
+          <text x="122" y="25.8" text-anchor="middle" font-size="10" font-weight="700" fill="#667483">130.354</text>
+          <text x="196" y="26.1" text-anchor="middle" font-size="10" font-weight="700" fill="#667483">130.119</text>
+          <text x="270" y="24.5" text-anchor="middle" font-size="10" font-weight="700" fill="#051C2C">131.617</text>
+          <text x="48" y="184" text-anchor="middle" font-size="10" fill="#667483">2021</text>
+          <text x="122" y="184" text-anchor="middle" font-size="10" fill="#667483">2022</text>
+          <text x="196" y="184" text-anchor="middle" font-size="10" fill="#667483">2023</text>
+          <text x="270" y="184" text-anchor="middle" font-size="10" fill="#667483">2024</text>
+          <text x="314" y="12" text-anchor="end" font-size="9" font-weight="700" fill="#2566A5">stagnan &middot; +3% dlm 3 thn</text>
+        </svg>
+        <div class="note">Unit (ribuan). Sebaran 2024: Jatim 21.383 &middot; Jabar 16.892 &middot; Jateng 10.256.</div>
+      </div>
+      <div class="chart mt-s">
+        <h5>Partisipasi penduduk sebagai anggota koperasi</h5>
+        <svg viewBox="0 0 330 92">
+          <text x="0" y="26" font-size="10" fill="#667483">Indonesia</text>
+          <rect x="100" y="14" width="123.7" height="19" fill="#A8C4DE"/>
+          <text x="230" y="28" font-size="10.5" font-weight="700" fill="#051C2C">8,41%</text>
+          <text x="0" y="64" font-size="10" fill="#667483">Rata-rata dunia</text>
+          <rect x="100" y="52" width="240" height="19" fill="#123B5C"/>
+          <text x="100" y="46" font-size="9" fill="#8C99A6"></text>
+          <text x="300" y="66" text-anchor="end" font-size="10.5" font-weight="700" fill="#051C2C">16,31%</text>
+        </svg>
+        <div class="note">Indonesia berada di bawah rata-rata dunia (ICA / ANTARA, 2021).</div>
+      </div>
+    </div>
+
+    <div class="col grow">
+      <ul class="bl">
+        <li><b>~70% koperasi bergerak di simpan pinjam</b> &mdash; sektor riil di bawah 30%; hanya 71,5% koperasi melaksanakan RAT (2023).</li>
+        <li><b>Total aset seluruh koperasi Rp281 triliun</b> dengan ~30 juta anggota &mdash; volume usaha Rp214 triliun (2024).</li>
+        <li><b>Ekonomi digital Indonesia GMV ~US$100 miliar (2025), +14% YoY</b> &mdash; terbesar di Asia Tenggara; 235,3 juta pengguna internet (81,7%, APJII 2026); 25,5 juta UMKM telah go digital.</li>
+      </ul>
+      <table class="gs mt">
+        <tr><th style="width:50%">Mondrag&oacute;n Corporation (Spanyol)</th><th style="width:50%">Koperasi Indonesia (secara nasional)</th></tr>
+        <tr><td>71.400 pekerja &middot; penjualan &euro;11,322 miliar</td><td>~30 juta anggota &middot; total aset Rp281 triliun</td></tr>
+        <tr><td>Belanja R&amp;D &euro;205 juta (<b>4,1%</b> dari penjualan) &middot; 386 keluarga paten</td><td>Kontribusi PDB <b>1,17%</b> &middot; absen dari Top 300 global</td></tr>
+      </table>
+      <div class="band mt">Pertanyaan mendasar: <b>bagaimana koperasi melakukan modernisasi dan digitalisasi agar tidak semakin tertinggal, dan justru memanfaatkan gelombang ekonomi digital?</b></div>
+    </div>
+  </div>
+
+  <div class="src">Sumber: BPS, Statistik Indonesia 2025; CNBC Indonesia (18/12/2024); ANTARA News (10/7/2021); ICA &amp; ICETT, World Co-operative Monitor 2025; Mondrag&oacute;n Annual Report 2025; Google&ndash;Temasek&ndash;Bain, e-Conomy SEA 2025; APJII 2026; Kemenkop UKM (14/10/2024).</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">02</span></div>
+</section>
+
+<!-- ===================== SLIDE 3 — RUMUSAN MASALAH ===================== -->
+<section class="slide">
+  <div class="kicker">Pendahuluan &middot; Rumusan Masalah</div>
+  <h1 class="t">Tiga pertanyaan yang dijawab</h1>
+  <div class="rule"></div>
+
+  <div class="row mt" style="gap:22px">
+    <div class="col" style="flex:1;border:1px solid var(--line);border-top:3px solid var(--navy);padding:22px 22px 18px;background:var(--soft-2)">
+      <div class="num" style="font-size:34px;font-weight:700;color:var(--blue-3);line-height:1;margin-bottom:12px">01</div>
+      <h2 style="font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:9px">Strategi modernisasi dan digitalisasi koperasi</h2>
+      <p style="font-size:12px;color:var(--body);line-height:1.55">Bentuk upaya apa saja yang dapat dilakukan untuk memodernisasi dan mendigitalisasi koperasi &mdash; mulai dari strategi pemerintah, kerangka kebijakan, hingga langkah konkret yang dapat dijalankan koperasi?</p>
+      <div class="mt-s"><span class="tag">Kebijakan negara</span> <span class="tag">Praktik koperasi</span></div>
+    </div>
+    <div class="col" style="flex:1;border:1px solid var(--line);border-top:3px solid var(--blue);padding:22px 22px 18px;background:var(--soft-2)">
+      <div class="num" style="font-size:34px;font-weight:700;color:var(--blue-3);line-height:1;margin-bottom:12px">02</div>
+      <h2 style="font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:9px">Digitalisasi layanan koperasi (koperasi modern)</h2>
+      <p style="font-size:12px;color:var(--body);line-height:1.55">Bagaimana wujud nyata digitalisasi layanan koperasi &mdash; layanan, platform, aplikasi, dan infrastruktur apa saja yang telah terbukti diimplementasikan koperasi di Indonesia, dan apa dampaknya?</p>
+      <div class="mt-s"><span class="tag blue">Operasional</span> <span class="tag blue">Studi kasus nyata</span></div>
+    </div>
+    <div class="col" style="flex:1;border:1px solid var(--line);border-top:3px solid var(--blue-2);padding:22px 22px 18px;background:var(--soft-2)">
+      <div class="num" style="font-size:34px;font-weight:700;color:var(--blue-3);line-height:1;margin-bottom:12px">03</div>
+      <h2 style="font-size:16.5px;font-weight:700;color:var(--navy);line-height:1.3;margin-bottom:9px">Integrasi teknologi keuangan (fintech)</h2>
+      <p style="font-size:12px;color:var(--body);line-height:1.55">Bagaimana integrasi fintech dengan koperasi, model kerja sama apa saja yang tersedia, serta apa manfaat dan risikonya bagi koperasi?</p>
+      <div class="mt-s"><span class="tag blue">Model integrasi</span> <span class="tag red">Manfaat &amp; risiko</span></div>
+    </div>
+  </div>
+
+  <div class="band mt" style="border-left-color:var(--blue)">
+    <b>Cakupan:</b> koperasi di Indonesia. <b>Metode:</b> studi literatur atas data faktual 2020&ndash;2026 dari BPS, OJK, Bank Indonesia, Kementerian Koperasi, ICA, dan media kredibel &mdash; setiap klaim disertai sumber (<i>traceability</i>).
+  </div>
+
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">03</span></div>
+</section>
+
+<!-- ===================== SLIDE 4 — KERANGKA TIGA LAPISAN ===================== -->
+<section class="slide">
+  <div class="kicker">Kerangka Pemikiran</div>
+  <h1 class="t">Tiga lapisan upaya yang saling menembus: strategi &rarr; layanan digital &rarr; fintech</h1>
+  <div class="rule"></div>
+
+  <div class="mt" style="display:flex;flex-direction:column;gap:13px;flex:1;justify-content:center">
+    <div style="display:flex;border:1px solid var(--line);background:#fff;min-height:118px">
+      <div style="width:236px;flex:none;background:var(--navy);color:#fff;padding:16px 18px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-3);font-weight:700">Lapisan 1</div>
+        <div style="font-size:18px;font-weight:700;margin-top:3px">Strategi</div>
+        <div style="font-size:10.5px;color:#A8C4DE;margin-top:3px">Kebijakan &mdash; mengatur arah dan kecepatan transformasi</div>
+      </div>
+      <div style="flex:1;padding:13px 20px;border-right:1px solid var(--line-2)">
+        <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px">Instrumen utama</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.5">UU P2SK &amp; revisinya (UU 4/2026) &middot; roadmap 4 pilar Kemenkop &middot; Permenkop 9/2020 (pengawasan digital, K1&ndash;K4) &middot; Permenkop 8/2023 &middot; UU Perkoperasian baru (target 2026)</div>
+      </div>
+      <div style="flex:1;padding:13px 20px">
+        <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px">Output</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.5">Rebranding koperasi sebagai entitas bisnis modern &middot; pengawasan berbasis data &middot; skala &amp; legitimasi</div>
+      </div>
+    </div>
+
+    <div style="display:flex;border:1px solid var(--line);background:#fff;min-height:118px">
+      <div style="width:236px;flex:none;background:var(--navy-2);color:#fff;padding:16px 18px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue-3);font-weight:700">Lapisan 2</div>
+        <div style="font-size:18px;font-weight:700;margin-top:3px">Layanan digital</div>
+        <div style="font-size:10.5px;color:#A8C4DE;margin-top:3px">Operasional &mdash; mengubah cara koperasi melayani anggota</div>
+      </div>
+      <div style="flex:1;padding:13px 20px;border-right:1px solid var(--line-2)">
+        <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px">Instrumen utama</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.5">Pembukuan digital / ERP &middot; kartu anggota digital &middot; QRIS &middot; marketplace (PaDi UMKM, LinkUMKM) &middot; aplikasi koperasi sendiri (NADI, INKOPPAS Link)</div>
+      </div>
+      <div style="flex:1;padding:13px 20px">
+        <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px">Output</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.5">Transparansi &amp; akuntabilitas &middot; efisiensi &middot; partisipasi anggota</div>
+      </div>
+    </div>
+
+    <div style="display:flex;border:1px solid var(--line);background:#fff;min-height:118px">
+      <div style="width:236px;flex:none;background:var(--blue);color:#fff;padding:16px 18px;display:flex;flex-direction:column;justify-content:center">
+        <div style="font-size:9px;letter-spacing:.16em;text-transform:uppercase;color:#D6E3EF;font-weight:700">Lapisan 3</div>
+        <div style="font-size:18px;font-weight:700;margin-top:3px">Fintech</div>
+        <div style="font-size:10.5px;color:#D6E3EF;margin-top:3px">Infrastruktur keuangan &mdash; mengalirkan dana dan pembayaran</div>
+      </div>
+      <div style="flex:1;padding:13px 20px;border-right:1px solid var(--line-2)">
+        <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px">Instrumen utama</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.5">AgenBRILink &amp; BNI Agen46 &middot; LPBBTI / industri pindar &middot; KUR digital &middot; BI-FAST &amp; SNAP &middot; channeling bank&ndash;fintech</div>
+      </div>
+      <div style="flex:1;padding:13px 20px">
+        <div style="font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:5px">Output</div>
+        <div style="font-size:12px;color:var(--body);line-height:1.5">Likuiditas &amp; jangkauan &mdash; Rp1,2 T ke 306 koperasi (BRI, Sep 2025); 1,2 juta titik agen</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band">Logika integrasi: <b>strategi menciptakan skala &middot; layanan digital menciptakan efisiensi &middot; fintech menciptakan likuiditas</b> &mdash; aplikasi tanpa pembayaran digital hanya etalase; agen bank tanpa pembukuan digital hanya titik transaksi tanpa akuntabilitas.</div>
+
+  <div class="src">Sumber: POJK 40/2024; POJK 47/2024; UU 4/2023 (P2SK); Infobanknews (2/10/2025).</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">04</span></div>
+</section>
+<!-- ===================== SLIDE 5 — TOPIK 1: ENAM BENTUK UPAYA ===================== -->
+<section class="slide">
+  <div class="kicker">Topik 1 &middot; Upaya Modernisasi dan Digitalisasi Koperasi</div>
+  <h1 class="t">Enam bentuk upaya yang dapat dijalankan tanpa menunggu program khusus</h1>
+  <div class="rule"></div>
+
+  <div class="mt" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:13px 16px;flex:1">
+    <div style="border:1px solid var(--line-2);border-top:2px solid var(--navy);padding:12px 14px;background:#fff">
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="num" style="font-size:17px;font-weight:700;color:var(--blue)">1</span><h3 style="font-size:13.5px;font-weight:700;color:var(--navy)">Rebranding koperasi</h3></div>
+      <p style="font-size:11px;color:var(--body);line-height:1.45;margin-top:5px">Mengubah citra koperasi menjadi entitas bisnis yang modern, kontributif, dan kompetitif; menarik generasi muda.</p>
+      <div class="mt-s"><span class="tag">Teten Masduki, 2021</span> <span class="tag">Budi Arie, 2024</span></div>
+    </div>
+    <div style="border:1px solid var(--line-2);border-top:2px solid var(--navy);padding:12px 14px;background:#fff">
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="num" style="font-size:17px;font-weight:700;color:var(--blue)">2</span><h3 style="font-size:13.5px;font-weight:700;color:var(--navy)">Digitalisasi pencatatan &amp; pengawasan</h3></div>
+      <p style="font-size:11px;color:var(--body);line-height:1.45;margin-top:5px">Data anggota, simpanan, transaksi, persediaan, keuangan, dan SHU tercatat digital &mdash; pengawasan berbasis data, klasifikasi K1&ndash;K4.</p>
+      <div class="mt-s"><span class="tag blue">Permenkop 9/2020</span></div>
+    </div>
+    <div style="border:1px solid var(--line-2);border-top:2px solid var(--navy);padding:12px 14px;background:#fff">
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="num" style="font-size:17px;font-weight:700;color:var(--blue)">3</span><h3 style="font-size:13.5px;font-weight:700;color:var(--navy)">Digitalisasi berjenjang sesuai skala</h3></div>
+      <p style="font-size:11px;color:var(--body);line-height:1.45;margin-top:5px">Mikro: e-katalog &amp; media sosial &middot; kecil: e-commerce lokal &middot; menengah: pendataan anggota &amp; pelaporan keuangan digital.</p>
+      <div class="mt-s"><span class="tag blue">Kemenkop UKM, 2024</span></div>
+    </div>
+    <div style="border:1px solid var(--line-2);border-top:2px solid var(--navy);padding:12px 14px;background:#fff">
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="num" style="font-size:17px;font-weight:700;color:var(--blue)">4</span><h3 style="font-size:13.5px;font-weight:700;color:var(--navy)">Transformasi bertahap</h3></div>
+      <p style="font-size:11px;color:var(--body);line-height:1.45;margin-top:5px">Hadir digital (profil/microsite resmi) &rarr; <i>go online</i> (layanan &amp; transaksi daring) &rarr; <i>go global</i> (marketplace nasional/global).</p>
+      <div class="mt-s"><span class="tag blue">Sekjen Kemenkop, Jul 2025</span></div>
+    </div>
+    <div style="border:1px solid var(--line-2);border-top:2px solid var(--navy);padding:12px 14px;background:#fff">
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="num" style="font-size:17px;font-weight:700;color:var(--blue)">5</span><h3 style="font-size:13.5px;font-weight:700;color:var(--navy)">Penguatan SDM &amp; tata kelola</h3></div>
+      <p style="font-size:11px;color:var(--body);line-height:1.45;margin-top:5px">Sertifikasi pengelola, <i>fit and proper test</i> pengurus/pengawas, 15 inkubator LPDB, pola &ldquo;kakak asuh&rdquo;, Sekolah Digital Koperasi UKSW.</p>
+      <div class="mt-s"><span class="tag blue">Permenkop 8/2023</span> <span class="tag">LPDB &middot; UKSW</span></div>
+    </div>
+    <div style="border:1px solid var(--line-2);border-top:2px solid var(--navy);padding:12px 14px;background:#fff">
+      <div style="display:flex;align-items:baseline;gap:8px"><span class="num" style="font-size:17px;font-weight:700;color:var(--blue)">6</span><h3 style="font-size:13.5px;font-weight:700;color:var(--navy)">Pembiayaan digital</h3></div>
+      <p style="font-size:11px;color:var(--body);line-height:1.45;margin-top:5px">e-Proposal LPDB (gratis, dashboard <i>real-time</i>), <i>credit scoring</i> digital LPDB 2027, KUR <i>online</i> (BRISPOT, Salam Digital).</p>
+      <div class="mt-s"><span class="tag blue">LPDB &middot; BRI &middot; BSI</span></div>
+    </div>
+  </div>
+
+  <div class="mt" style="display:flex;gap:20px;align-items:stretch">
+    <div class="chart" style="width:300px">
+      <h5>LPDB 2026: realisasi Rp1,6 T dari target Rp2,1 T</h5>
+      <svg viewBox="0 0 260 30">
+        <rect x="0" y="9" width="240" height="11" fill="#E2E8EE"/>
+        <rect x="0" y="9" width="182.9" height="11" fill="#123B5C"/>
+        <text x="246" y="19" font-size="10" font-weight="700" fill="#051C2C">76%</text>
+      </svg>
+      <div class="note">Realisasi menjangkau 115 koperasi mitra &amp; 8.268 penerima manfaat di 22 provinsi (~85% ke sektor riil).</div>
+    </div>
+    <div class="chart" style="width:300px">
+      <h5>KUR 2026: Rp169 T per 22 Juli dari plafon Rp290 T</h5>
+      <svg viewBox="0 0 260 30">
+        <rect x="0" y="9" width="240" height="11" fill="#E2E8EE"/>
+        <rect x="0" y="9" width="139.9" height="11" fill="#2566A5"/>
+        <text x="246" y="19" font-size="10" font-weight="700" fill="#051C2C">58%</text>
+      </svg>
+      <div class="note">2,65 juta debitur UMKM &middot; NPL ~2% &middot; &gt;65% ke sektor produksi. KUR 2025 terealisasi Rp270 T (96% target).</div>
+    </div>
+    <div class="chips" style="flex:1;border-top:1px solid var(--navy)">
+      <div class="c"><div class="v num">Rp22,9<small> T</small></div><div class="l">LPDB kumulatif 2008&ndash;Okt 2026 &middot; 3.929 koperasi di 36 provinsi &middot; 537.678 penerima manfaat</div></div>
+      <div class="c"><div class="v num">13,4<small> juta</small></div><div class="l">Pelaku koperasi &amp; UMKM terdata 2022&ndash;2023 (455 kab/kota, 34 provinsi)</div></div>
+    </div>
+  </div>
+
+  <div class="src">Sumber: ANTARA News (12/7/2024, 14/10/2024, 28/7/2025, 2/12/2025, 12/10/2026); Kompas (12/10/2026); Harian Jogja (12/10/2026); Kumparan; Kontan (KUR 2026); BRI BRISPOT; BSI Salam Digital.</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">05</span></div>
+</section>
+
+<!-- ===================== SLIDE 6 — TOPIK 2: TUJUH BENTUK LAYANAN DIGITAL ===================== -->
+<section class="slide">
+  <div class="kicker">Topik 2 &middot; Digitalisasi Layanan Koperasi (Koperasi Modern)</div>
+  <h1 class="t">Tujuh bentuk layanan digital koperasi &mdash; telah terbukti diimplementasikan di Indonesia</h1>
+  <div class="rule"></div>
+
+  <div class="row mt">
+    <div class="col" style="width:398px">
+      <div class="numlist">
+        <div class="item"><span class="n num">1</span><span class="tx"><b>Administrasi keanggotaan digital</b> &mdash; kartu anggota digital, cek saldo &amp; SHU <span class="ex">(KWSG Gresik, SIC Prosperity)</span></span></div>
+        <div class="item"><span class="n num">2</span><span class="tx"><b>Pembukuan digital &amp; ERP</b> terintegrasi <i>real-time</i> <span class="ex">(KWSG 7 aplikasi; KPBS Pangalengan &mdash; kerja sama OJK&ndash;Swiss)</span></span></div>
+        <div class="item"><span class="n num">3</span><span class="tx"><b>Simpan pinjam digital</b> &mdash; tabungan <i>online</i>, pengajuan pinjaman daring <span class="ex">(KSP Nasari, NADI)</span></span></div>
+        <div class="item"><span class="n num">4</span><span class="tx"><b>Pembayaran digital</b> &mdash; QRIS &amp; PPOB <span class="ex">(INKOPPAS Link; KKMP Banjarsari; QRIS Bale Merchant)</span></span></div>
+        <div class="item"><span class="n num">5</span><span class="tx"><b>Agen layanan keuangan (&ldquo;mini ATM&rdquo;)</b> &mdash; setor/tarik tunai, transfer, tagihan <span class="ex">(AgenBRILink; BNI Agen46)</span></span></div>
+        <div class="item"><span class="n num">6</span><span class="tx"><b>Marketplace produk anggota</b> <span class="ex">(PaDi UMKM; LinkUMKM; Kophub; MyKopkel)</span></span></div>
+        <div class="item"><span class="n num">7</span><span class="tx"><b>Aplikasi koperasi milik sendiri</b> <span class="ex">(NADI; INKOPPAS Link; Kopnusa; MyKopkel)</span></span></div>
+      </div>
+    </div>
+
+    <div class="col grow">
+      <div style="display:grid;grid-template-columns:252px 252px;justify-content:space-between;gap:12px">
+        <div class="chart">
+          <h5>Transaksi QRIS (miliar) <span class="delta">+107%</span></h5>
+          <svg viewBox="0 0 180 96">
+            <line x1="6" y1="78" x2="170" y2="78" stroke="#C7D1DA"/>
+            <rect x="30" y="48.1" width="34" height="29.9" fill="#A8C4DE"/>
+            <rect x="78" y="16" width="34" height="62" fill="#123B5C"/>
+            <text x="47" y="43" text-anchor="middle" font-size="9" font-weight="700" fill="#667483">6,05</text>
+            <text x="95" y="11" text-anchor="middle" font-size="9" font-weight="700" fill="#051C2C">12,55</text>
+            <text x="47" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2025</text>
+            <text x="95" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2026</text>
+          </svg>
+        </div>
+        <div class="chart">
+          <h5>Nilai transaksi QRIS (Rp T) <span class="delta">+3,7%</span></h5>
+          <svg viewBox="0 0 180 96">
+            <line x1="6" y1="78" x2="170" y2="78" stroke="#C7D1DA"/>
+            <rect x="30" y="18.2" width="34" height="59.8" fill="#A8C4DE"/>
+            <rect x="78" y="16" width="34" height="62" fill="#123B5C"/>
+            <text x="47" y="13" text-anchor="middle" font-size="9" font-weight="700" fill="#667483">579</text>
+            <text x="95" y="11" text-anchor="middle" font-size="9" font-weight="700" fill="#051C2C">600,7</text>
+            <text x="47" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2025</text>
+            <text x="95" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2026</text>
+          </svg>
+        </div>
+        <div class="chart">
+          <h5>Merchant QRIS (juta) <span class="delta">+14%</span></h5>
+          <svg viewBox="0 0 180 96">
+            <line x1="6" y1="78" x2="170" y2="78" stroke="#C7D1DA"/>
+            <rect x="30" y="23.7" width="34" height="54.3" fill="#A8C4DE"/>
+            <rect x="78" y="16" width="34" height="62" fill="#2566A5"/>
+            <text x="47" y="18.7" text-anchor="middle" font-size="9" font-weight="700" fill="#667483">39,3</text>
+            <text x="95" y="11" text-anchor="middle" font-size="9" font-weight="700" fill="#051C2C">44,86</text>
+            <text x="47" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2025</text>
+            <text x="95" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2026</text>
+          </svg>
+          <div class="note">93&ndash;95% merchant adalah pelaku UMKM.</div>
+        </div>
+        <div class="chart">
+          <h5>Pengguna QRIS (juta) <span class="delta">+16%</span></h5>
+          <svg viewBox="0 0 180 96">
+            <line x1="6" y1="78" x2="170" y2="78" stroke="#C7D1DA"/>
+            <rect x="30" y="24.5" width="34" height="53.5" fill="#A8C4DE"/>
+            <rect x="78" y="16" width="34" height="62" fill="#2566A5"/>
+            <text x="47" y="19.5" text-anchor="middle" font-size="9" font-weight="700" fill="#667483">57</text>
+            <text x="95" y="11" text-anchor="middle" font-size="9" font-weight="700" fill="#051C2C">~66</text>
+            <text x="47" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2025</text>
+            <text x="95" y="91" text-anchor="middle" font-size="8" fill="#8C99A6">Smt I 2026</text>
+          </svg>
+          <div class="note">Kumulatif 15 miliar transasi per Juli 2026.</div>
+        </div>
+      </div>
+      <div class="band mt-s" style="border-left-color:var(--blue)">Infrastruktur pendukung: <b>MDR 0% untuk merchant Usaha Mikro</b> (transaksi &le;Rp500.000, efektif 1 Okt 2026). BI-FAST Q2 2026: 1,53 miliar transaksi / Rp3.777 T (+38,09% YoY). QRIS akan berlaku lintas ASEAN (DEFA, Nov 2026).</div>
+    </div>
+  </div>
+
+  <div class="mt chips">
+    <div class="c"><div class="v num">1,2<small> juta</small></div><div class="l">Titik AgenBRILink (Sep 2025) &mdash; aktivitas koperasi desa naik 20&ndash;30%</div></div>
+    <div class="c"><div class="v num">79,81<small> juta</small></div><div class="l">Transaksi BNI Agen46 (Sep 2025) &middot; +37,2% YoY &middot; 226.143 agen</div></div>
+    <div class="c"><div class="v num">Rp7,2<small> T</small></div><div class="l">Transaksi PaDi UMKM 2025 &middot; target 2026 Rp8,8 T &middot; Tender Kilat 5&ndash;7 &rarr; 2&ndash;3 hari kerja</div></div>
+    <div class="c"><div class="v num">3.000+</div><div class="l">Produk digital PPOB via API (Ayoconnect) &mdash; PLN, PDAM, BPJS, e-money</div></div>
+    <div class="c"><div class="v num">7.845</div><div class="l">Koperasi potensial target Digi Koperasi (Telkom) &mdash; kasir, akuntansi, dashboard nasional</div></div>
+  </div>
+
+  <div class="src">Sumber: Bank Indonesia (4/8/2025, 17/8/2026); ANTARA News (6/8/2026, 19/9/2026, 3/11/2025, 19/11/2025, 14/8/2026, 14/8/2025); Kompas (24/10/2025); CNBC Indonesia (7/9/2026); Jurnas (22/7/2026); detikFinance (27/8/2026); Telkom (25/7/2025).</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">06</span></div>
+</section>
+
+<!-- ===================== SLIDE 7 — TOPIK 3: INTEGRASI FINTECH ===================== -->
+<section class="slide">
+  <div class="kicker">Topik 3 &middot; Integrasi Teknologi Keuangan (Fintech)</div>
+  <h1 class="t">Tujuh model integrasi koperasi&ndash;fintech &mdash; model &ldquo;koperasi sebagai agen perbankan&rdquo; yang paling mudah diakses</h1>
+  <div class="rule"></div>
+
+  <div class="mt kpi-row">
+    <div class="kpi"><div class="v num">Rp106,94<small> T</small></div><div class="l">Outstanding pembiayaan pindar (LPBBTI) &middot; Agu 2026</div></div>
+    <div class="kpi"><div class="v num">+22,07%</div><div class="l">Pertumbuhan YoY &middot; rata-rata 22&ndash;29% sepanjang 2025&ndash;2026</div></div>
+    <div class="kpi"><div class="v num">94</div><div class="l">Penyelenggara berizin (OJK, 31 Jul 2026)</div></div>
+    <div class="kpi"><div class="v num">26,91<small> juta</small></div><div class="l">Rekening peminjam aktif (Jun 2026)</div></div>
+    <div class="kpi"><div class="v num" style="color:var(--red)">4,73%</div><div class="l">TWP90 (Agu 2026) &mdash; batas maksimal OJK 5% <span class="tag red">memburuk</span></div></div>
+  </div>
+
+  <div class="row mt">
+    <div class="col" style="width:540px">
+      <div class="chart">
+        <h5>Outstanding pembiayaan LPBBTI / industri pindar (Rp triliun)</h5>
+        <svg viewBox="0 0 520 252">
+          <line x1="40" y1="188.1" x2="508" y2="188.1" stroke="#E2E8EE"/>
+          <line x1="40" y1="137.3" x2="508" y2="137.3" stroke="#E2E8EE"/>
+          <line x1="40" y1="86.4" x2="508" y2="86.4" stroke="#E2E8EE"/>
+          <text x="34" y="191" text-anchor="end" font-size="8.5" fill="#8C99A6">80</text>
+          <text x="34" y="140" text-anchor="end" font-size="8.5" fill="#8C99A6">90</text>
+          <text x="34" y="89" text-anchor="end" font-size="8.5" fill="#8C99A6">100</text>
+          <path d="M40,196 L91.7,187.8 L143.3,182.8 L195,107.4 L246.7,97.8 L298.3,74 L350,59.2 L401.7,51.6 L453.3,48.9 L505,41.8 L505,215 L40,215 Z" fill="#EAF1F7"/>
+          <path d="M40,196 L91.7,187.8 L143.3,182.8 L195,107.4 L246.7,97.8 L298.3,74 L350,59.2 L401.7,51.6 L453.3,48.9 L505,41.8" fill="none" stroke="#123B5C" stroke-width="2.5"/>
+          <circle cx="40" cy="196" r="3" fill="#123B5C"/>
+          <circle cx="91.7" cy="187.8" r="3" fill="#123B5C"/>
+          <circle cx="143.3" cy="182.8" r="3" fill="#123B5C"/>
+          <circle cx="195" cy="107.4" r="3" fill="#123B5C"/>
+          <circle cx="246.7" cy="97.8" r="3" fill="#123B5C"/>
+          <circle cx="298.3" cy="74" r="3" fill="#123B5C"/>
+          <circle cx="350" cy="59.2" r="3" fill="#123B5C"/>
+          <circle cx="401.7" cy="51.6" r="3" fill="#123B5C"/>
+          <circle cx="453.3" cy="48.9" r="3" fill="#123B5C"/>
+          <circle cx="505" cy="41.8" r="3.5" fill="#051C2C"/>
+          <text x="42" y="188" font-size="8.5" font-weight="700" fill="#667483">78,50</text>
+          <text x="505" y="33" text-anchor="end" font-size="9.5" font-weight="700" fill="#051C2C">106,94</text>
+          <text x="508" y="16" text-anchor="end" font-size="9" font-weight="700" fill="#2566A5">+22,07% YoY</text>
+          <text x="40" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Jan-25</text>
+          <text x="91.7" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Mar-25</text>
+          <text x="143.3" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Apr-25</text>
+          <text x="195" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Nov-25</text>
+          <text x="246.7" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Des-25</text>
+          <text x="298.3" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Mar-26</text>
+          <text x="350" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Mei-26</text>
+          <text x="401.7" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Jun-26</text>
+          <text x="453.3" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Jul-26</text>
+          <text x="505" y="229" text-anchor="middle" font-size="7.5" fill="#8C99A6">Agu-26</text>
+          <line x1="40" y1="215" x2="508" y2="215" stroke="#C7D1DA"/>
+        </svg>
+        <div class="note">Perbankan mendominasi 75,59% pendanaan industri pindar (Rp66,25 T, Apr 2026) &mdash; naik dari 59,87% (Des 2024). Pembiayaan ke sektor produktif/UMKM Rp35,12 T (Smt I 2026, +23,25%).</div>
+      </div>
+    </div>
+
+    <div class="col grow">
+      <table class="gs">
+        <tr><th style="width:26px">#</th><th>Model integrasi</th><th style="width:34%">Contoh</th></tr>
+        <tr><td class="num"><b>1</b></td><td><b>Koperasi sebagai agen / simpul layanan keuangan</b> <span class="tag blue">termudah</span></td><td>AgenBRILink &middot; BNI Agen46 &middot; Mandiri Agen</td></tr>
+        <tr><td class="num"><b>2</b></td><td><b>Channeling</b> bank melalui platform P2P lending</td><td>BRI&ndash;Investree &middot; pedoman BPRS&ndash;LPBBTI Syariah &middot; Krom Bank</td></tr>
+        <tr><td class="num"><b>3</b></td><td><b>Koperasi sebagai penyelenggara LPBBTI</b> <span class="tag red">moratorium</span></td><td>Diizinkan POJK 40/2024 &amp; 47/2024; izin dibekukan</td></tr>
+        <tr><td class="num"><b>4</b></td><td><b>Konsorsium / koperasi sekunder</b> layanan keuangan</td><td>Model KSP Bersama &middot; Kerja Sama KSP &middot; Konsorsium LKM</td></tr>
+        <tr><td class="num"><b>5</b></td><td><b>SaaS &amp; platform</b> digitalisasi koperasi</td><td>Digi Koperasi (Telkom) &middot; INKOPPAS Link</td></tr>
+        <tr><td class="num"><b>6</b></td><td><b>Integrasi pembayaran digital</b></td><td>QRIS (Bale Merchant) &middot; PPOB &middot; e-bank</td></tr>
+        <tr><td class="num"><b>7</b></td><td><b>Marketplace / e-commerce</b> produk koperasi</td><td>PaDi UMKM &middot; LinkUMKM &middot; Kophub &middot; MyKopkel</td></tr>
+      </table>
+      <div class="band mt-s" style="border-left-color:var(--red)">Bukti konkret: <b>BRI menyalurkan Rp1,2 T ke 306 koperasi</b> (Sep 2025, skema channeling &amp; executing); <b>Mandiri&ndash;Kospin Jasa</b> melayani 600.000 anggota; <b>status koperasi sebagai penyelenggara LPBBTI masih dalam moratorium izin</b> &mdash; koperasi belum bisa menjadi fintech sendiri.</div>
+    </div>
+  </div>
+
+  <div class="src">Sumber: Kontan (Agu 2026, Sep 2026); ANTARA News (6/8/2026); OJK Direktori LPBBTI Jul 2026; CNBC Indonesia (24/8/2026); Infobanknews (2/10/2025); OJK POJK 40/2024 &amp; POJK 47/2024; detikFinance.</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">07</span></div>
+</section>
+
+<!-- ===================== SLIDE 8 — ANALISIS KRITIS ===================== -->
+<section class="slide">
+  <div class="kicker">Analisis &amp; Sintesis</div>
+  <h1 class="t">Analisis kritis: enam temuan dari data</h1>
+  <div class="rule"></div>
+
+  <div class="row mt">
+    <div class="col" style="width:560px">
+      <div class="numlist">
+        <div class="item"><span class="n num">1</span><span class="tx"><b>Paradoks jumlah vs kualitas.</b> Koperasi terbanyak di dunia (131.617 unit), tetapi kontribusi PDB 1,17% dan absen dari Top 300 global (total <i>turnover</i> US$2,79 T).</span></div>
+        <div class="item"><span class="n num">2</span><span class="tx"><b>Lima pola keberhasilan koperasi digital:</b> mulai dari pencatatan, miliki aplikasi sendiri, sentuh sektor riil, bermitra ekosistem, jaga tata kelola.</span></div>
+        <div class="item"><span class="n num">3</span><span class="tx"><b>Kesenjangan digital antar-koperasi</b> menciptakan dua kelas: koperasi &ldquo;terhubung&rdquo; (Kospin Jasa, KWSG, NADI) vs 28,5% yang tidak melaksanakan RAT.</span></div>
+        <div class="item"><span class="n num">4</span><span class="tx"><b>Kasus TaniHub:</b> digitalisasi tanpa tata kelola justru mempercepat risiko &mdash; vonis uang pengganti Rp364,2 M &amp; 2&ndash;9 tahun penjara (Jun&ndash;Sep 2026).</span></div>
+        <div class="item"><span class="n num">5</span><span class="tx"><b>Kesenjangan literasi&ndash;inklusi:</b> jutaan orang memakai layanan keuangan digital tanpa memahami risikonya &mdash; <b>literasi fintech hanya 24,90%</b>.</span></div>
+        <div class="item"><span class="n num">6</span><span class="tx"><b>Kesehatan kredit industri pindar memburuk:</b> TWP90 naik dari 2,60% (Agu 2025) ke 4,73% (Agu 2026) &mdash; batas OJK 5%; 18 penyelenggara di atas 5% (Mei 2026).</span></div>
+      </div>
+      <div class="band mt-s" style="border-left-color:var(--blue)">Posisi tawar koperasi di era <i>channeling</i>: <b>kepercayaan komunitas &amp; &ldquo;mekanisme sosial yang inheren&rdquo;</b> (pengurus mengenal anggota, pengawasan kolektif) &mdash; aset yang tidak dimiliki platform digital murni.</div>
+    </div>
+
+    <div class="col grow">
+      <div class="chart" style="width:356px">
+        <h5>Indeks literasi vs inklusi keuangan (SNLIK)</h5>
+        <svg viewBox="0 0 310 198">
+          <line x1="30" y1="162" x2="300" y2="162" stroke="#C7D1DA"/>
+          <line x1="30" y1="126.5" x2="300" y2="126.5" stroke="#E2E8EE"/>
+          <line x1="30" y1="91" x2="300" y2="91" stroke="#E2E8EE"/>
+          <line x1="30" y1="55.5" x2="300" y2="55.5" stroke="#E2E8EE"/>
+          <line x1="30" y1="20" x2="300" y2="20" stroke="#E2E8EE"/>
+          <text x="26" y="165" text-anchor="end" font-size="8" fill="#8C99A6">0</text>
+          <text x="26" y="94" text-anchor="end" font-size="8" fill="#8C99A6">50</text>
+          <text x="26" y="23" text-anchor="end" font-size="8" fill="#8C99A6">100%</text>
+          <rect x="29" y="69.1" width="24" height="92.9" fill="#123B5C"/>
+          <rect x="57" y="55.5" width="24" height="106.5" fill="#A8C4DE"/>
+          <rect x="124" y="67.4" width="24" height="94.6" fill="#123B5C"/>
+          <rect x="152" y="30.3" width="24" height="131.7" fill="#A8C4DE"/>
+          <rect x="219" y="63.2" width="24" height="98.8" fill="#123B5C"/>
+          <rect x="247" y="28.9" width="24" height="133.1" fill="#A8C4DE"/>
+          <text x="41" y="65" text-anchor="middle" font-size="8.5" font-weight="700" fill="#051C2C">65,4</text>
+          <text x="69" y="51" text-anchor="middle" font-size="8.5" font-weight="700" fill="#667483">75,0</text>
+          <text x="136" y="63" text-anchor="middle" font-size="8.5" font-weight="700" fill="#051C2C">66,6</text>
+          <text x="164" y="26" text-anchor="middle" font-size="8.5" font-weight="700" fill="#667483">92,7</text>
+          <text x="231" y="59" text-anchor="middle" font-size="8.5" font-weight="700" fill="#051C2C">69,6</text>
+          <text x="259" y="24" text-anchor="middle" font-size="8.5" font-weight="700" fill="#667483">93,6</text>
+          <text x="55" y="178" text-anchor="middle" font-size="9" fill="#667483">2024</text>
+          <text x="150" y="178" text-anchor="middle" font-size="9" fill="#667483">2025</text>
+          <text x="245" y="178" text-anchor="middle" font-size="9" fill="#667483">2026</text>
+          <rect x="120" y="4" width="9" height="9" fill="#123B5C"/><text x="133" y="12" font-size="8.5" fill="#33414F">Literasi</text>
+          <rect x="182" y="4" width="9" height="9" fill="#A8C4DE"/><text x="195" y="12" font-size="8.5" fill="#33414F">Inklusi</text>
+        </svg>
+        <div class="note">2025: metode cakupan DNKI; 2026: konvensional. Literasi fintech hanya <b>24,90%</b> (OJK, Jul 2026). Telah melampaui target RPJMN 2025&ndash;2029 untuk 2029.</div>
+      </div>
+      <div class="chart mt-s" style="width:356px">
+        <h5>TWP90 industri pindar (%) &mdash; <span style="color:var(--red)">mendekati batas OJK 5%</span></h5>
+        <svg viewBox="0 0 310 176">
+          <line x1="34" y1="145" x2="300" y2="145" stroke="#C7D1DA"/>
+          <line x1="34" y1="99.5" x2="300" y2="99.5" stroke="#E2E8EE"/>
+          <line x1="34" y1="54.1" x2="300" y2="54.1" stroke="#E2E8EE"/>
+          <text x="30" y="148" text-anchor="end" font-size="8" fill="#8C99A6">0</text>
+          <text x="30" y="102" text-anchor="end" font-size="8" fill="#8C99A6">2</text>
+          <text x="30" y="57" text-anchor="end" font-size="8" fill="#8C99A6">4</text>
+          <line x1="34" y1="31.4" x2="300" y2="31.4" stroke="#A32A24" stroke-width="1" stroke-dasharray="5 3"/>
+          <text x="300" y="27" text-anchor="end" font-size="8" font-weight="700" fill="#A32A24">Batas OJK 5%</text>
+          <path d="M34,82.1 L84.4,78.4 L134.8,80.2 L185.2,85.9 L235.6,46.8 L286,37.5" fill="none" stroke="#A32A24" stroke-width="2"/>
+          <circle cx="34" cy="82.1" r="2.5" fill="#A32A24"/>
+          <circle cx="84.4" cy="78.4" r="2.5" fill="#A32A24"/>
+          <circle cx="134.8" cy="80.2" r="2.5" fill="#A32A24"/>
+          <circle cx="185.2" cy="85.9" r="2.5" fill="#A32A24"/>
+          <circle cx="235.6" cy="46.8" r="2.5" fill="#A32A24"/>
+          <circle cx="286" cy="37.5" r="3" fill="#A32A24"/>
+          <text x="34" y="74" text-anchor="middle" font-size="7.5" fill="#667483">2,77</text>
+          <text x="84.4" y="70" text-anchor="middle" font-size="7.5" fill="#667483">2,93</text>
+          <text x="134.8" y="72" text-anchor="middle" font-size="7.5" fill="#667483">2,85</text>
+          <text x="185.2" y="78" text-anchor="middle" font-size="7.5" fill="#667483">2,60</text>
+          <text x="235.6" y="39" text-anchor="middle" font-size="7.5" fill="#667483">4,32</text>
+          <text x="286" y="29" text-anchor="middle" font-size="8" font-weight="700" fill="#A32A24">4,73</text>
+          <text x="34" y="161" text-anchor="middle" font-size="7.5" fill="#8C99A6">Mar-25</text>
+          <text x="84.4" y="161" text-anchor="middle" font-size="7.5" fill="#8C99A6">Apr-25</text>
+          <text x="134.8" y="161" text-anchor="middle" font-size="7.5" fill="#8C99A6">Jun-25</text>
+          <text x="185.2" y="161" text-anchor="middle" font-size="7.5" fill="#8C99A6">Agu-25</text>
+          <text x="235.6" y="161" text-anchor="middle" font-size="7.5" fill="#8C99A6">Des-25</text>
+          <text x="286" y="161" text-anchor="middle" font-size="7.5" fill="#8C99A6">Agu-26</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <div class="src">Sumber: OJK&ndash;LPS&ndash;BPS, SNLIK 2026 (11/8/2026); Bisnis Terkini (Jul 2026); Kontan (TWP90, Mei 2026); ICA&ndash;ICETT WCM 2025; detikNews (10/9/2026).</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">08</span></div>
+</section>
+<!-- ===================== SLIDE 9 — ROADMAP LIMA LANGKAH ===================== -->
+<section class="slide">
+  <div class="kicker">Sintesis Praktis</div>
+  <h1 class="t">Roadmap lima langkah digitalisasi koperasi</h1>
+  <div class="rule"></div>
+  <div class="st">Setiap langkah berurutan, dimulai dari yang membutuhkan biaya dan kapasitas paling rendah.</div>
+
+  <table class="gs mt" style="table-layout:fixed;flex:1">
+    <colgroup><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"><col style="width:20%"></colgroup>
+    <tr>
+      <th>Langkah 1</th><th>Langkah 2</th><th>Langkah 3</th><th>Langkah 4</th><th>Langkah 5</th>
+    </tr>
+    <tr>
+      <td><b style="color:var(--navy);font-size:12.5px">Pencatatan digital dasar</b></td>
+      <td><b style="color:var(--navy);font-size:12.5px">Hadir digital</b></td>
+      <td><b style="color:var(--navy);font-size:12.5px">Pembayaran digital</b></td>
+      <td><b style="color:var(--navy);font-size:12.5px">Layanan keuangan kolaboratif</b></td>
+      <td><b style="color:var(--navy);font-size:12.5px">Marketplace &amp; kepemilikan platform</b></td>
+    </tr>
+    <tr>
+      <td>Catat data anggota, transaksi, simpanan, persediaan, dan kas secara digital; migrasi dari pembukuan manual.</td>
+      <td>Profil koperasi di direktori resmi, microsite, media sosial, e-katalog produk.</td>
+      <td>Adopsi QRIS (MDR 0% Usaha Mikro &le;Rp500.000) &amp; PPOB sebagai layanan tambahan.</td>
+      <td>Menjadi agen bank (AgenBRILink, BNI Agen46), kemitraan <i>channeling</i>, pengajuan LPDB/KUR digital.</td>
+      <td>Jual produk anggota di PaDi UMKM / LinkUMKM / Kophub; kembangkan aplikasi koperasi sendiri.</td>
+    </tr>
+    <tr>
+      <td><span style="font-size:9.5px;color:var(--muted)">Spreadsheet / aplikasi pembukuan: Digi Koperasi, INKOPPAS Link</span></td>
+      <td><span style="font-size:9.5px;color:var(--muted)">Microsite / direktori koperasi, WhatsApp Business, Instagram</span></td>
+      <td><span style="font-size:9.5px;color:var(--muted)">QRIS statis/dinamis, mesin EDC (Bale Merchant), payment gateway</span></td>
+      <td><span style="font-size:9.5px;color:var(--muted)">e-Proposal LPDB, BRISPOT, Salam Digital</span></td>
+      <td><span style="font-size:9.5px;color:var(--muted)">PaDi UMKM, LinkUMKM, Kophub, aplikasi sendiri (NADI sebagai inspirasi)</span></td>
+    </tr>
+    <tr>
+      <td><span class="sq"><i></i><i></i><i></i><i></i><i></i></span> <span style="font-size:9.5px;color:var(--muted)">biaya rendah</span></td>
+      <td><span class="sq"><i></i><i></i><i></i><i></i><i></i></span></td>
+      <td><span class="sq"><i></i><i></i><i></i><i></i><i class="o"></i></span></td>
+      <td><span class="sq"><i></i><i></i><i></i><i class="o"></i><i class="o"></i></span></td>
+      <td><span class="sq"><i></i><i></i><i class="o"></i><i class="o"></i><i class="o"></i></span> <span style="font-size:9.5px;color:var(--muted)">butuh kapasitas</span></td>
+    </tr>
+  </table>
+  <div style="font-size:8.5px;color:var(--faint);margin-top:4px">Tingkat kemudahan relatif (skala 1&ndash;5) berdasarkan estimasi biaya &amp; kapasitas kelembagaan.</div>
+
+  <div class="band mt" style="border-left-color:var(--blue)">
+    <b>Prinsip pelaksanaan (dari data empiris):</b> sesuaikan skala usaha &middot; ikuti tiga fase (hadir digital &rarr; <i>go online</i> &rarr; <i>go global</i>) &middot; utamakan transparansi &amp; akuntabilitas sebagai tujuan utama &middot; bangun SDM lebih dulu (<i>fit and proper test</i>, sertifikasi pengelola) &middot; manfaatkan pendampingan yang tersedia (inkubator LPDB, pola &ldquo;kakak asuh&rdquo;, Sekolah Digital Koperasi, Rumah BUMN, Desa BRILiaN).
+  </div>
+
+  <div class="src">Sumber: Bank Indonesia (MDR QRIS 0%, 1 Okt 2026); LPDB; Kompas (18/5/2025); ANTARA News (12/10/2026).</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">09</span></div>
+</section>
+
+<!-- ===================== SLIDE 10 — KESIMPULAN ===================== -->
+<section class="slide">
+  <div class="kicker">Penutup &middot; Kesimpulan</div>
+  <h1 class="t">Empat kesimpulan utama</h1>
+  <div class="rule"></div>
+
+  <div class="mt" style="display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:14px 18px;flex:1;min-height:0">
+    <div style="border:1px solid var(--line-2);border-left:4px solid var(--navy);padding:13px 16px;background:var(--soft-2)">
+      <h3 style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:5px">1 &middot; Tiga lapisan arsitektur yang saling menembus</h3>
+      <p style="font-size:11.5px;color:var(--body);line-height:1.45">Strategi menciptakan skala &middot; layanan digital menciptakan efisiensi &amp; transparansi &middot; fintech menciptakan likuiditas &amp; jangkauan.</p>
+    </div>
+    <div style="border:1px solid var(--line-2);border-left:4px solid var(--blue);padding:13px 16px;background:var(--soft-2)">
+      <h3 style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:5px">2 &middot; Posisi strategis: &ldquo;mekanisme sosial yang inheren&rdquo;</h3>
+      <p style="font-size:11.5px;color:var(--body);line-height:1.45">Di tengah kesenjangan literasi (69,57%) dan inklusi (93,61%) serta literasi fintech 24,90%, koperasi memiliki kepercayaan komunitas dan pengawasan kolektif yang tidak dimiliki platform digital murni &mdash; solusi alami untuk kesenjangan literasi-inklusi.</p>
+    </div>
+    <div style="border:1px solid var(--line-2);border-left:4px solid var(--blue-2);padding:13px 16px;background:var(--soft-2)">
+      <h3 style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:5px">3 &middot; Kunci: koperasi yang berhasil memiliki aplikasi &amp; datanya sendiri</h3>
+      <p style="font-size:11.5px;color:var(--body);line-height:1.45">NADI (KSP Nasari), INKOPPAS Link, dan MyKopkel membuktikan kepemilikan platform menjaga data dan hubungan dengan anggota tetap di tangan koperasi &mdash; agar tidak tergerus menjadi sekadar ekstensionitas bank di era <i>channeling</i>.</p>
+    </div>
+    <div style="border:1px solid var(--line-2);border-left:4px solid var(--red);padding:13px 16px;background:var(--red-bg)">
+      <h3 style="font-size:13.5px;font-weight:700;color:var(--navy);margin-bottom:5px">4 &middot; Paradoks jumlah vs kualitas, dan risiko yang harus dikelola</h3>
+      <p style="font-size:11.5px;color:var(--body);line-height:1.45">131.617 koperasi vs kontribusi PDB 1,17% dan absen dari Top 300 global. TWP90 industri pindar memburuk (2,60% &rarr; 4,73%) dan kasus TaniHub mengingatkan: <b>digitalisasi tanpa tata kelola yang baik justru mempercepat risiko</b>.</p>
+    </div>
+  </div>
+
+  <div class="mt row" style="gap:16px;flex:none">
+    <div class="chart" style="width:372px">
+      <h5>Bukti dampak: KKMP Banjarsari (2026)</h5>
+      <div style="display:flex;gap:10px">
+        <div style="flex:1">
+          <div style="font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:3px">Jumlah anggota</div>
+          <svg viewBox="0 0 220 68">
+            <rect x="6" y="8" width="55.6" height="16" fill="#A8C4DE"/>
+            <text x="66" y="21" font-size="9.5" font-weight="700" fill="#667483">32</text>
+            <rect x="6" y="32" width="214" height="16" fill="#123B5C"/>
+            <text x="196" y="45" text-anchor="end" font-size="9.5" font-weight="700" fill="#fff">138</text>
+          </svg>
+        </div>
+        <div style="flex:1">
+          <div style="font-size:8.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:700;margin-bottom:3px">Omzet UMKM anggota (Rp jt / 3&ndash;4 hari)</div>
+          <svg viewBox="0 0 220 68">
+            <rect x="6" y="8" width="110" height="16" fill="#A8C4DE"/>
+            <text x="121" y="21" font-size="9.5" font-weight="700" fill="#667483">0,5&ndash;0,7</text>
+            <rect x="6" y="32" width="201.7" height="16" fill="#2566A5"/>
+            <text x="201" y="45" text-anchor="end" font-size="9.5" font-weight="700" fill="#fff">1,0&ndash;1,2</text>
+          </svg>
+        </div>
+      </div>
+      <div class="note">Sebelum vs sesudah ekosistem digital (MyKopkel + marketplace + QRIS). Omzet gerai Jan&ndash;Agu 2026 &gt; Rp400 juta.</div>
+    </div>
+    <div class="chips" style="flex:1;border-top:1px solid var(--navy);align-items:stretch">
+      <div class="c"><div class="v num">42.000</div><div class="l">Anggota KSP Nasari diraih melalui aplikasi NADI (sejak 2020)</div></div>
+      <div class="c"><div class="v num">2.000+</div><div class="l">Koperasi pasar terjangkau INKOPPAS Link (Sep 2026)</div></div>
+      <div class="c"><div class="v num">7</div><div class="l">Aplikasi terintegrasi KWSG Gresik &middot; tidak pernah gagal bayar</div></div>
+      <div class="c"><div class="v num">Rp19,3&rarr;24,4<small> M</small></div><div class="l">Aset Kopmen BMI (transformasi digital, 2023)</div></div>
+    </div>
+  </div>
+
+  <div class="src">Sumber: detikNews (27/9/2026); Kontan (1/10/2024); ANTARA News (19/9/2026, 13/11/2024, 19/5/2023); OJK&ndash;LPS&ndash;BPS SNLIK 2026.</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">10</span></div>
+</section>
+
+<!-- ===================== SLIDE 11 — SARAN ===================== -->
+<section class="slide">
+  <div class="kicker">Penutup &middot; Saran</div>
+  <h1 class="t">Saran: tiga pelaku utama</h1>
+  <div class="rule"></div>
+
+  <div class="row mt" style="gap:20px">
+    <div class="col" style="flex:1;border:1px solid var(--line);border-top:3px solid var(--navy);padding:16px 18px">
+      <h3 style="font-size:14px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;font-size:11px;margin-bottom:10px">Pemerintah <span style="color:var(--faint);font-weight:600;text-transform:none;letter-spacing:0">&middot; Kemenkop, OJK, BI</span></h3>
+      <div class="numlist">
+        <div class="item"><span class="n num">1</span><span class="tx">Perbesar kapasitas pendampingan &mdash; 15 inkubator LPDB (~225 koperasi per <i>batch</i>) vs 131.617 koperasi aktif; replikasi pola &ldquo;kakak asuh&rdquo; dan Sekolah Digital Koperasi.</span></div>
+        <div class="item"><span class="n num">2</span><span class="tx">Evaluasi moratorium izin LPBBTI untuk koperasi &mdash; hukum (POJK 40/2024 &amp; 47/2024) telah membuka pintu.</span></div>
+        <div class="item"><span class="n num">3</span><span class="tx">Susun kerangka kepemilikan &amp; perlindungan data agregat koperasi (UU PDP hanya mengatur data perorangan).</span></div>
+        <div class="item"><span class="n num">4</span><span class="tx">Lengkapi UU Perkoperasian baru: simpanan yang dijamin (LPS khusus) &amp; otoritas pengawas koperasi independen.</span></div>
+        <div class="item"><span class="n num">5</span><span class="tx">Perluas manfaat QRIS &mdash; sosialisasi MDR 0% dan adopsi di wilayah 3T.</span></div>
+      </div>
+    </div>
+    <div class="col" style="flex:1.15;border:1px solid var(--line);border-top:3px solid var(--blue);padding:16px 18px">
+      <h3 style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Pengurus koperasi</h3>
+      <div class="numlist">
+        <div class="item"><span class="n num">1</span><span class="tx">Mulai dari langkah paling dasar: digitalisasi pencatatan data anggota, transaksi, simpanan, persediaan, kas.</span></div>
+        <div class="item"><span class="n num">2</span><span class="tx">Adopsi QRIS &mdash; MDR 0% bagi Usaha Mikro (transaksi &le;Rp500.000, efektif 1 Okt 2026).</span></div>
+        <div class="item"><span class="n num">3</span><span class="tx">Bangun SDM dan tata kelola lebih dulu (<i>fit and proper test</i>, sertifikasi) &mdash; kasus TaniHub membuktikan platform tidak menggantikan pengawasan.</span></div>
+        <div class="item"><span class="n num">4</span><span class="tx">Manfaatkan pembiayaan &amp; pendampingan: e-Proposal LPDB (gratis), KUR <i>online</i>, Rumah BUMN, Desa BRILiaN.</span></div>
+        <div class="item"><span class="n num">5</span><span class="tx">Kembangkan unit simpan pinjam secara hati-hati &mdash; setelah keanggotaan kuat, modal sendiri terbentuk, dana cadangan tersedia.</span></div>
+        <div class="item"><span class="n num">6</span><span class="tx">Kembangkan aplikasi/platform sendiri (NADI, INKOPPAS Link, MyKopkel sebagai inspirasi).</span></div>
+      </div>
+    </div>
+    <div class="col" style="flex:0.85;border:1px solid var(--line);border-top:3px solid var(--blue-2);padding:16px 18px">
+      <h3 style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;margin-bottom:10px">Akademisi <span style="color:var(--faint);font-weight:600;text-transform:none;letter-spacing:0">&middot; peneliti</span></h3>
+      <div class="numlist">
+        <div class="item"><span class="n num">1</span><span class="tx">Riset kuantitatif dampak digitalisasi terhadap kinerja koperasi &mdash; <i>gap</i> terbesar: bukti yang ada (56,3% / 52% / 51,6%) berasal dari riset BRI tentang UMKM, bukan koperasi.</span></div>
+        <div class="item"><span class="n num">2</span><span class="tx">Kaji model <i>platform co-op</i> &mdash; koperasi sebagai pemilik platform, dengan pelajaran dari Mondrag&oacute;n dan INKOPPAS Link.</span></div>
+        <div class="item"><span class="n num">3</span><span class="tx">Evaluasi efektivitas pendampingan (inkubator LPDB, pola &ldquo;kakak asuh&rdquo;, Sekolah Digital Koperasi).</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="band mt" style="border-left-color:var(--navy)"><i>Gap</i> riset: tidak ada riset kuantitatif yang mengukur dampak digitalisasi terhadap kinerja koperasi secara nasional &mdash; klaim manfaat digitalisasi koperasi masih bersifat induktif/anekdotal.</div>
+
+  <div class="src">Sumber: BRI Research Institute (Kuartal I 2023).</div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">11</span></div>
+</section>
+
+<!-- ===================== SLIDE 12 — PENUTUP ===================== -->
+<section class="slide closing">
+  <div class="inner">
+    <div class="kk">Penutup</div>
+    <blockquote>&ldquo;Digitalisasi adalah kebutuhan, bukan kemewahan &mdash; dan koperasi yang berhasil adalah koperasi yang menguasai teknologinya, bukan yang dikendalikan olehnya.&rdquo;</blockquote>
+    <div class="rule"></div>
+    <div class="thanks">Terima kasih</div>
+    <div class="meta">Strategi Modernisasi dan Digitalisasi Koperasi &middot; Digitalisasi Layanan Koperasi &middot; Integrasi Fintech &mdash; 18 Oktober 2026</div>
+  </div>
+</section>
+
+<!-- ===================== SLIDE 13 - DAFTAR PUSTAKA ===================== -->
+<section class="slide">
+  <div class="kicker">Daftar Pustaka</div>
+  <h1 class="t">Daftar Pustaka</h1>
+  <div class="rule"></div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:0 26px;flex:1;min-height:0;margin-top:12px">
+    <div class="col" style="min-width:0">
+      <div class="pth">A. Peraturan &amp; Dokumen Resmi</div>
+      <ol class="ref tight">
+        <li><b>Republik Indonesia.</b> <i>Undang-Undang No. 4 Tahun 2023 tentang Pengembangan dan Penguatan Sektor Keuangan (UU P2SK).</i></li>
+        <li><b>Republik Indonesia.</b> <i>Undang-Undang No. 27 Tahun 2022 tentang Pelindungan Data Pribadi.</i></li>
+        <li><b>Otoritas Jasa Keuangan.</b> <i>POJK No. 40 Tahun 2024 tentang Layanan Pendanaan Bersama Berbasis Teknologi Informasi (LPBBTI).</i></li>
+        <li><b>Otoritas Jasa Keuangan.</b> <i>POJK No. 47 Tahun 2024 tentang Koperasi di Sektor Jasa Keuangan.</i></li>
+        <li><b>Otoritas Jasa Keuangan.</b> <i>SEOJK 19/SEOJK.06/2025 tentang Penyelenggaraan LPBBTI.</i></li>
+        <li><b>Kementerian Koperasi.</b> <i>Permenkop No. 9 Tahun 2020 tentang Pengawasan Koperasi.</i></li>
+        <li><b>Kementerian Koperasi UKM.</b> <i>Permenkop No. 8 Tahun 2023 tentang Usaha Simpan Pinjam Koperasi.</i></li>
+        <li><b>Bank Indonesia.</b> <i>PADG No. 3 Tahun 2025 tentang QRIS.</i></li>
+        <li><b>Bank Indonesia.</b> <i>Peraturan Bank Indonesia No. 6 Tahun 2026 (QRIS).</i></li>
+      </ol>
+      <div class="pth" style="margin-top:11px">B. Data Statistik &amp; Laporan Resmi</div>
+      <ol class="ref tight" style="counter-reset:r 9">
+        <li><b>Badan Pusat Statistik.</b> <i>Statistik Indonesia 2025 &mdash; &ldquo;Jumlah Koperasi Aktif Menurut Provinsi&rdquo;.</i></li>
+        <li><b>Otoritas Jasa Keuangan.</b> <i>Direktori LPBBTI per 31 Juli 2026.</i></li>
+        <li><b>OJK, LPS, BPS.</b> <i>Siaran Pers Bersama: Hasil SNLIK Tahun 2026</i> (11 Agu 2026).</li>
+        <li><b>OJK dan BPS.</b> <i>Hasil Survei Nasional Literasi dan Inklusi Keuangan (SNLIK) 2025</i> (2 Mei 2025).</li>
+        <li><b>Bank Indonesia.</b> <i>Siaran Pers No. 27/170/DKom &mdash; QRIS Semester I 2025</i> (4 Agu 2025).</li>
+        <li><b>Bank Indonesia.</b> <i>&ldquo;Kartu Kredit Indonesia dan Kebijakan MDR 0%&rdquo;</i> (17 Agu 2026).</li>
+        <li><b>Lembaga Pengelola Dana Bergulir (LPDB).</b> <i>Realisasi penyaluran dan program inkubasi koperasi</i> (Okt 2026).</li>
+        <li><b>International Co-operative Alliance (ICA) &amp; ICETT.</b> <i>World Co-operative Monitor 2025.</i></li>
+        <li><b>MONDRAGON Corporation.</b> <i>Annual Report 2025.</i></li>
+        <li><b>Google, Temasek, Bain &amp; Company.</b> <i>e-Conomy SEA 2025.</i></li>
+        <li><b>APJII.</b> <i>Survei Profil Internet Indonesia 2026.</i></li>
+        <li><b>BRI Research Institute.</b> <i>Riset dampak digitalisasi terhadap UMKM</i> (Kuartal I 2023).</li>
+        <li><b>BRI.</b> <i>BRISPOT &mdash; KUR Mikro untuk Koperasi dan UMKM.</i></li>
+        <li><b>BSI.</b> <i>Salam Digital &mdash; KUR BSI.</i></li>
+      </ol>
+    </div>
+    <div class="col" style="min-width:0">
+      <div class="pth">C. Media &amp; Publikasi Sekunder (1/2)</div>
+      <ol class="ref tight" style="counter-reset:r 23">
+        <li><b>Kontan.</b> &ldquo;Kini Jadi Menteri Koperasi, Budi Arie Setiadi Ingin Digitalisasi Koperasi&rdquo; (21 Okt 2024).</li>
+        <li><b>CNBC Indonesia.</b> &ldquo;Kontribusi Koperasi ke Ekonomi RI Kurang 2%, Budi Arie Target 10%&rdquo; (18 Des 2024).</li>
+        <li><b>ANTARA News.</b> &ldquo;Kontribusi koperasi pada PDB ditargetkan capai 5,5 persen pada 2024&rdquo; (10 Jul 2021).</li>
+        <li><b>ANTARA News.</b> &ldquo;Koperasi di-rebranding jadi entitas bisnis modern&rdquo; (12 Jul 2021).</li>
+        <li><b>ANTARA News.</b> &ldquo;Kemenkop UKM: 25,5 juta UMKM telah &lsquo;go digital&rsquo;&rdquo; (14 Okt 2024).</li>
+        <li><b>ANTARA News.</b> &ldquo;Refleksi Hari Koperasi, mewujudkan koperasi sebagai ekosistem UMKM&rdquo; (12 Jul 2024).</li>
+        <li><b>ANTARA News.</b> &ldquo;LPDB siapkan 15 inkubator untuk perkuat kapasitas bisnis KDKMP&rdquo; (12 Okt 2026).</li>
+        <li><b>Kompas.</b> &ldquo;LPDB Salurkan Rp1,6 Triliun ke Koperasi hingga Oktober 2026&rdquo; (12 Okt 2026).</li>
+        <li><b>Harian Jogja.</b> &ldquo;LPDB Salurkan Rp22,9 Triliun, Teknologi Credit Scoring Disiapkan untuk Koperasi&rdquo; (12 Okt 2026).</li>
+        <li><b>ANTARA News.</b> &ldquo;Menkop sebut Sekolah Digital Koperasi UKSW bisa perkuat kopdes&rdquo; (2 Des 2025).</li>
+        <li><b>Kompas.</b> &ldquo;Tiga Model Layanan Simpan Pinjam bagi Koperasi Desa Merah Putih&rdquo; (18 Mei 2025).</li>
+        <li><b>Kumparan.</b> &ldquo;Realisasi Penyaluran KUR 2025 Capai Rp 270 Triliun, 96 Persen dari Target&rdquo;.</li>
+        <li><b>Kontan.</b> &ldquo;Realisasi KUR 2026 Tembus Rp 169 Triliun, Jangkau 2,65 Juta Debitur UMKM&rdquo;.</li>
+        <li><b>Kontan.</b> &ldquo;KSP Nasari Berhasil Merekrut Puluhan Ribu Anggota Karena Digitalisasi Koperasi&rdquo; (1 Okt 2024).</li>
+        <li><b>ANTARA News.</b> &ldquo;Akses LPDB-KUMKM, KWSG Gresik Tingkatkan Layanan Melalui Digitalisasi Bisnis&rdquo; (13 Nov 2024).</li>
+        <li><b>ANTARA News.</b> &ldquo;Ayoconnect dukung pertumbuhan koperasi melalui transformasi digital&rdquo; (19 Mei 2023).</li>
+      </ol>
+    </div>
+    <div class="col" style="min-width:0">
+      <div class="pth">C. Media &amp; Publikasi Sekunder (2/2)</div>
+      <ol class="ref tight" style="counter-reset:r 39">
+        <li><b>detikNews.</b> &ldquo;Geliat UMKM Kuliner Banjarsari Lewat Digitalisasi Ekosistem Koperasi&rdquo; (27 Sep 2026).</li>
+        <li><b>ANTARA News.</b> &ldquo;INKOPPAS dorong pedagang pasar beralih ke transaksi digital&rdquo; (19 Sep 2026).</li>
+        <li><b>Telkom.</b> &ldquo;Telkom Hadirkan Digi Koperasi, Dukung Digitalisasi Ribuan Koperasi&rdquo; (25 Jul 2025).</li>
+        <li><b>ANTARA News.</b> &ldquo;PaDi UMKM Telkom membidik transaksi Rp8,8 triliun tahun 2026&rdquo; (14 Agu 2026).</li>
+        <li><b>Kompas.</b> &ldquo;Transaksi BNI Agen46 Tumbuh 37,2 Persen Capai 79,81 Juta&rdquo; (24 Okt 2025).</li>
+        <li><b>ANTARA News.</b> &ldquo;Melalui AgenBRILink Koperasi Merah Putih, BRI dorong ekonomi di Desa Padang Mantinggi&rdquo; (3 Nov 2025).</li>
+        <li><b>Kontan.</b> &ldquo;Pembiayaan Fintech Lending Tembus Rp106,94 Triliun per Agustus 2026&rdquo;.</li>
+        <li><b>Kontan.</b> &ldquo;Pembiayaan Fintech Lending Naik 25,88% Jadi Rp 105,14 Triliun Hingga Juni 2026&rdquo;.</li>
+        <li><b>ANTARA News.</b> &ldquo;OJK catat pembiayaan pinjol capai Rp105,63 triliun pada Juli 2026&rdquo; (6 Agu 2026).</li>
+        <li><b>Bisnis Terkini.</b> &ldquo;OJK Catat Pembiayaan Pindar Rp 105,63 Triliun, Literasi Fintech Baru 24,90%&rdquo; (Jul 2026).</li>
+        <li><b>CNBC Indonesia.</b> &ldquo;Memasuki Era Baru, Fintech Lending Days 2026 Perkuat Ekosistem Pindar&rdquo; (24 Agu 2026).</li>
+        <li><b>Infobanknews.</b> &ldquo;BRI Dorong Digitalisasi Kopdes Merah Putih untuk Perluas Akses Keuangan Desa&rdquo; (2 Okt 2025).</li>
+        <li><b>Kontan.</b> &ldquo;Per Mei 2026, 18 Fintech Lending Memiliki Angka TWP90 di Atas 5%&rdquo;.</li>
+        <li><b>Berita Fintech.</b> &ldquo;Bank Mandiri Gandeng Kospin Jasa untuk Penyediaan Layanan Perbankan Elektronik&rdquo; (Sep 2026).</li>
+        <li><b>detikFinance.</b> &ldquo;Apa Itu Koperasi Jasa Keuangan? Begini Penjelasan OJK&rdquo;.</li>
+        <li><b>detikNews.</b> &ldquo;3 Korporasi Divonis Bayar Rp 364,2 M Terkait Kasus Korupsi TaniHub&rdquo; (10 Sep 2026).</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="foot"><span>Strategi Digitalisasi Koperasi dan Fintech</span><span class="pg num">13</span></div>
+</section>
+
+</div>
+</body>
+</html>

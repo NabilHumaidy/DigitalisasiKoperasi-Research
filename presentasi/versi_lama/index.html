@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Modernisasi Koperasi &amp; Integrasi Fintech Indonesia — Visualisasi Data</title>
+<meta name="description" content="Visualisasi data riset: strategi modernisasi koperasi, digitalisasi layanan koperasi, dan integrasi teknologi keuangan (fintech) di Indonesia.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="auto">
+<a class="skip" href="#ringkasan">Lompat ke isi</a>
+
+<header class="masthead">
+  <div class="wrap masthead-inner">
+    <div class="masthead-main">
+      <p class="kicker">Manajemen Koperasi &middot; Makalah &amp; Visualisasi Data</p>
+      <h1>Modernisasi Koperasi dan Integrasi Teknologi Keuangan di Indonesia</h1>
+      <p class="dek">
+        Tiga puluh delapan angka yang menggambarkan arsitektur ekonomi digital Indonesia:
+        131.617 koperasi yang harus terdigitalisasi, 80 ribu Kopdes Merah Putih yang
+        dibentuk dalam waktu dua tahun, dan industri fintech lending yang tumbuh
+        22&ndash;29% per tahun sementara kualitas kreditnya merangkak mendekati batas OJK.
+      </p>
+      <ul class="masthead-meta">
+        <li>Penyusun: <span>Nabil Humaidy</span></li>
+        <li>Mata Kuliah: <span>Manajemen Koperasi</span></li>
+        <li>Tanggal: <span>13 Oktober 2026</span></li>
+        <li>Naskah lengkap: <a href="Makalah_Digitalisasi_Koperasi_dan_Fintech.md">Makalah_Digitalisasi_Koperasi_dan_Fintech.md</a></li>
+      </ul>
+    </div>
+    <aside class="masthead-aside">
+      <h2 class="aside-h">Cara membaca halaman ini</h2>
+      <ol>
+        <li>Setiap grafik adalah <em>turunan langsung</em> dari satu tabel pada makalah &mdash; nomor tabelnya tertulis di penanda bagian.</li>
+        <li>Setiap grafik bisa diubah ke tampilan tabel lewat tombol <b>Tampilkan tabel</b>; tidak ada angka yang hanya bisa dibaca dengan mengarahkan kursor.</li>
+        <li>Ada sumber resmi di bawah setiap grafik. Data dipotong pada periode pelaporan terbaru yang dipublikasikan, bukan pada tanggal hari ini.</li>
+        <li>Garis besar warna mengikuti palet yang sudah lolos uji Delta E untuk buta warna (CVD) &mdash; identitas seri tidak pernah hanya dari warna.</li>
+      </ol>
+    </aside>
+  </div>
+</header>
+
+<div class="controls wrap" role="toolbar" aria-label="Kontrol tampilan">
+  <div class="filter-group" role="group" aria-label="Saring berdasarkan bagian">
+    <span class="filter-label">Bagian</span>
+    <button class="chip is-active" data-filter="all" aria-pressed="true">Semua</button>
+    <button class="chip" data-filter="A" aria-pressed="false">A &middot; Strategi</button>
+    <button class="chip" data-filter="B" aria-pressed="false">B &middot; Layanan</button>
+    <button class="chip" data-filter="C" aria-pressed="false">C &middot; Fintech</button>
+  </div>
+  <div class="filter-group" role="group" aria-label="Tema warna">
+    <span class="filter-label">Tema</span>
+    <button class="chip" data-theme-set="light" aria-pressed="false">Terang</button>
+    <button class="chip" data-theme-set="dark" aria-pressed="false">Gelap</button>
+    <button class="chip is-active" data-theme-set="auto" aria-pressed="true">Sistem</button>
+  </div>
+</div>
+
+<main class="wrap">
+
+  <!-- ================= RINGKASAN ================= -->
+  <section class="chapter" id="ringkasan" aria-labelledby="h-ringkasan">
+    <div class="chapter-head">
+      <h2 id="h-ringkasan">Ringkasan dalam empat angka</h2>
+      <p>Posisi koperasi Indonesia pada saat program digitalisasi massal dimulai.</p>
+    </div>
+
+    <div class="hero-grid">
+      <div class="hero-card" data-part="A">
+        <p class="hero-label">Koperasi aktif di Indonesia</p>
+        <p class="hero-value">131.617</p>
+        <p class="hero-unit">unit &middot; per Desember 2024</p>
+        <p class="hero-note">
+          Naik 3.771 unit dari 2023, tapi hanya 71,5% yang melaksanakan Rapat Anggota
+          Tahunan pada 2023. Volume usaha seluruhnya Rp 214 triliun dan total aset
+          Rp 281 triliun &mdash; kontribusi terhadap PDB 1,17%.
+        </p>
+        <p class="hero-src">Sumber: BPS, Statistik Indonesia 2025; Kementerian Koperasi UKM (Tabel 3.1, 3.2).</p>
+      </div>
+
+      <div class="tile-grid">
+        <div class="stat-tile" data-part="C">
+          <p class="tile-label">Outstanding pembiayaan LPBBTI</p>
+          <p class="tile-value">Rp 106,94 T</p>
+          <p class="tile-delta is-up">+36,2% sejak Januari 2025</p>
+          <p class="tile-note">26,91 juta rekening peminjam aktif per Juni 2026.</p>
+        </div>
+        <div class="stat-tile" data-part="A">
+          <p class="tile-label">Kopdes Merah Putih berbadan hukum</p>
+          <p class="tile-value">81.485</p>
+          <p class="tile-delta">target Inpres 9/2025: 80 ribu desa</p>
+          <p class="tile-note">42.349 di antaranya sudah memiliki akun Simkopdes.</p>
+        </div>
+        <div class="stat-tile" data-part="B">
+          <p class="tile-label">Nilai transaksi QRIS</p>
+          <p class="tile-value">Rp 600,69 T</p>
+          <p class="tile-delta is-up">+3,7% (Smt I 2025 &rarr; Smt I 2026)</p>
+          <p class="tile-note">Jumlah transaksi naik dua kali lipat: 6,05 miliar &rarr; 12,55 miliar.</p>
+        </div>
+        <div class="stat-tile" data-part="C">
+          <p class="tile-label">Inklusi keuangan (SNLIK 2026)</p>
+          <p class="tile-value">93,61%</p>
+          <p class="tile-delta is-warn">literasi hanya 69,57%</p>
+          <p class="tile-note">Selisih 24,04 poin: memakai tanpa memahami.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= BAGIAN A ================= -->
+  <section class="chapter" id="bagian-a" aria-labelledby="h-a">
+    <div class="chapter-head">
+      <span class="part-tag">Bagian A</span>
+      <h2 id="h-a">Strategi Modernisasi dan Digitalisasi Koperasi</h2>
+      <p>
+        Kondisi objektif koperasi sebelum strategi dijalankan, lalu jejak digitalisasi
+        program unggulan pemerintah. Data pada bagian ini menjadi baseline: tanpa angka
+        ini, target &ldquo;digitalisasi koperasi&rdquo; tidak terukur.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <figure class="chart-card span-7" id="chart-koperasi" data-part="A">
+        <div class="chart-head">
+          <span class="ref">A &middot; Tabel 3.1</span>
+          <h3>Jumlah koperasi aktif, 2021&ndash;2024</h3>
+          <p class="chart-sub">Pertumbuhan jumlah unit, bukan pertumbuhan usaha. Total nasional; BPS tidak membedakan koperasi yang operasional penuh dengan yang hanya berbadan hukum.</p>
+        </div>
+        <div class="chart-body" id="viz-koperasi"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-koperasi"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-koperasi">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: Badan Pusat Statistik &mdash; &ldquo;Jumlah Koperasi Aktif Menurut Provinsi&rdquo;, Statistik Indonesia 2025 &mdash;
+          <a href="https://www.bps.go.id/id/statistics-table/2/NzYwIzI=/jumlah-koperasi-aktif-menurut-provinsi.html">bps.go.id</a>
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-5" id="chart-komposisi" data-part="A">
+        <div class="chart-head">
+          <span class="ref">A &middot; &sect;3.1</span>
+          <h3>Konsentrasi pada usaha simpan pinjam</h3>
+          <p class="chart-sub">Komposisi 260.885 pekerja koperasi per Desember 2025, menurut jenis koperasi. Sektor riil (produsen, pemasaran, jasa) menyerap kurang dari 20% tenaga kerja.</p>
+        </div>
+        <div class="chart-body" id="viz-komposisi"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-komposisi"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-komposisi">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: Kementerian Koperasi (laporan tervalidasi Dinas Provinsi/Kabupaten/Kota), via Databoks Katadata &mdash;
+          <a href="https://databoks.katadata.co.id/ketenagakerjaan/statistik/6aba4a4c470e6/perbandingan-jumlah-manajer-pekerja-7-jenis-koperasi-di-indonesia-2025">databoks.katadata.co.id</a>
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-12" id="chart-kdkmp" data-part="A">
+        <div class="chart-head">
+          <span class="ref">A &middot; Tabel 3.4</span>
+          <h3>Ketertinggalan adopsi digital Kopdes Merah Putih</h3>
+          <p class="chart-sub">
+            Jalur adopsi platform nasional per 15 September 2025, dari yang paling banyak
+            ke paling sedikit. Lebar grafik ini adalah masalahnya: mendirikan badan hukum
+            (81.485) lebih mudah daripada mengisi profil microsite (9.317) atau mengajukan
+            proposal bisnis (368). Syarat 19 Agustus 2025 &mdash; koperasi yang belum masuk
+            microsite tidak dilanjutkan proses bisnisnya, termasuk keagenan pupuk dan elpiji.
+          </p>
+        </div>
+        <div class="chart-body" id="viz-kdkmp"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-kdkmp"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-kdkmp">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: ANTARA News &mdash; &ldquo;Kemenkop perkuat digitalisasi Kopdes tingkatkan manajemen koperasi&rdquo;, 20 September 2025 &mdash;
+          <a href="https://www.antaranews.com/berita/5122445/kemenkop-perkuat-digitalisasi-kopdes-tingkatkan-manajemen-koperasi">antaranews.com</a>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ================= BAGIAN B ================= -->
+  <section class="chapter" id="bagian-b" aria-labelledby="h-b">
+    <div class="chapter-head">
+      <span class="part-tag">Bagian B</span>
+      <h2 id="h-b">Digitalisasi Layanan Koperasi (Koperasi Modern)</h2>
+      <p>
+        Infrastruktur pembayaran yang dipakai koperasi modern: QRIS, BI-FAST, dan jaringan
+        agen perbankan. Yang menarik bukan tingginya angka, melainkan arah perubahannya.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <figure class="chart-card span-7" id="chart-qris" data-part="B">
+        <div class="chart-head">
+          <span class="ref">B &middot; Tabel 3.5</span>
+          <h3>QRIS: jumlah transaksi melipatgandakan, nilai tidak</h3>
+          <p class="chart-sub">
+            Empat metrik QRIS, diindekskan ke 100 pada Semester I 2025 agar berbagi satu
+            skala. Jumlah transaksi naik 107% sementara nilai transaksi hanya naik 3,7%
+            &mdash; nilai per transaksi rata-rata turun sekitar setengahnya, menandakan QRIS
+            bergeser ke pembayaran rutin bernilai kecil.
+          </p>
+        </div>
+        <div class="chart-body" id="viz-qris"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-qris"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-qris">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: Bank Indonesia, Siaran Pers No. 27/170/DKom, 4 Agustus 2025 &mdash;
+          <a href="https://www.bi.go.id/id/publikasi/ruang-media/news-release/Pages/sp_2717025.aspx">bi.go.id</a>;
+          ANTARA News, 6 Agustus 2026; CNBC Indonesia, 7 September 2026
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-5" id="chart-bifast" data-part="B">
+        <div class="chart-head">
+          <span class="ref">B &middot; &sect;3.14.2</span>
+          <h3>BI-FAST: perpotongan tahunan</h3>
+          <p class="chart-sub">Perbandingan Oktober 2025 terhadap Triwulan II 2026. Periode tidak identik (bulan vs kuartal) sehingga grafik membandingkan arah, bukan tingkat absolut.</p>
+        </div>
+        <div class="chart-body" id="viz-bifast"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-bifast"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-bifast">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: Bank Indonesia, Siaran Pers No. 27/274/DKom, 19 November 2025; RDG Bulanan Juli 2026 (Gubernur BI Perry Warjiyo), dikutip Jurnas &mdash;
+          <a href="https://www.jurnas.com/artikel/1662371/triwulan-ii-nilai-transaksi-bi-fast-capai-rp3777-triliun">jurnas.com</a>
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-12" id="chart-agen" data-part="B">
+        <div class="chart-head">
+          <span class="ref">B &middot; &sect;3.13</span>
+          <h3>Jaringan fisik di balik digitalisasi koperasi</h3>
+          <p class="chart-sub">
+            Model integrasi &ldquo;koperasi sebagai agen perbankan&rdquo; (Model 1 dari 7 model
+            integrasi pada Tabel 3.7) adalah yang paling banyak dipakai. Skalanya menjadi
+            alasan: jaringan agen yang sudah ada lebih besar dari jumlah koperasi itu sendiri.
+          </p>
+        </div>
+        <div class="chart-body" id="viz-agen"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-agen"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-agen">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: BRI (Oktober 2025); BNI (2005&ndash;2025, dilaporkan pada 2025); Kementerian Koperasi (September 2025); LPDB Kemenkeu (Oktober 2026) &mdash; rincian tautan pada &sect;3.13 dan &sect;3.19 makalah.
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ================= BAGIAN C ================= -->
+  <section class="chapter" id="bagian-c" aria-labelledby="h-c">
+    <div class="chapter-head">
+      <span class="part-tag">Bagian C</span>
+      <h2 id="h-c">Integrasi Teknologi Keuangan (Fintech)</h2>
+      <p>
+        Sisi pasokan pembiayaan: berapa cepat tumbuh, siapa yang membiayainya, sehatkah
+        pertumbuhannya, dan apakah pemakai layanan keuangan memahaminya.
+      </p>
+    </div>
+
+    <div class="grid">
+
+      <figure class="chart-card span-8" id="chart-lpbbti" data-part="C">
+        <div class="chart-head">
+          <span class="ref">C &middot; Tabel 3.6</span>
+          <h3>Pertumbuhan outstanding pembiayaan LPBBTI, 2025&ndash;2026</h3>
+          <p class="chart-sub">
+            Lintas platform industri &ldquo;pindar&rdquo;. Pertumbuhan tahunan 22&ndash;29% sepanjang
+            periode. Lonjakan antara April dan November 2025 memantulkan dua hal: perluasan
+            peminjam aktif (15,4 juta akun pada Kuartal I 2025, +58,7% YoY) dan perubahan
+            komposisi pendanaan ke arah perbankan.
+          </p>
+        </div>
+        <div class="chart-body" id="viz-lpbbti"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-lpbbti"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-lpbbti">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: Bisnis.com (Maret 2025); Kontan (April 2025, Juni 2026, Agustus 2026); ANTARA News (Juli 2026); Badan Akademik &amp; Kemahasiswaan UNAS &mdash;
+          <a href="https://keuangan.kontan.co.id/news/pembiayaan-fintech-lending-tembus-rp-10694-triliun-per-agustus-2026">kontan.co.id</a>
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-4" id="chart-twp" data-part="C">
+        <div class="chart-head">
+          <span class="ref">C &middot; Tabel 3.6</span>
+          <h3>Kualitas kredit: TWP90 mendekati batas OJK</h3>
+          <p class="chart-sub">Tingkat Wanprestasi 90 hari sebagai % dari outstanding. Garis putus-putus adalah batas maksimal OJK (5%).</p>
+        </div>
+        <div class="chart-body" id="viz-twp"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-twp"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-twp">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: OJK, dilaporkan oleh Bisnis.com, Kontan, dan ANTARA News (Maret 2025 &mdash; Agustus 2026) &mdash;
+          <a href="https://keuangan.kontan.co.id/news/pembiayaan-fintech-lending-tembus-rp-10694-triliun-per-agustus-2026">kontan.co.id</a>
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-7" id="chart-snlik" data-part="C">
+        <div class="chart-head">
+          <span class="ref">C &middot; Tabel 3.8</span>
+          <h3>Literasi dan inklusi keuangan, SNLIK 2024&ndash;2026</h3>
+          <p class="chart-sub">
+            Inklusi (memakai) tumbuh 18,6 poin dalam dua tahun; literasi (memahami) hanya
+            4,14 poin. Inklusi keuangan 93,61% pada 2026 telah melampaui target RPJMN
+            2025&ndash;2029 untuk tahun 2029 &mdash; target tercapai tiga tahun lebih cepat.
+          </p>
+        </div>
+        <div class="chart-body" id="viz-snlik"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-snlik"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-snlik">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: OJK, LPS, dan BPS &mdash; &ldquo;Siaran Pers Bersama: Indeks Literasi dan Inklusi Keuangan Masyarakat Meningkat&rdquo;, 11 Agustus 2026 &mdash;
+          <a href="https://ojk.go.id/id/berita-dan-kegiatan/siaran-pers/Pages/Hasil-SNLIK-Tahun-2026.aspx">ojk.go.id</a>
+        </figcaption>
+      </figure>
+
+      <figure class="chart-card span-5" id="chart-meters" data-part="C">
+        <div class="chart-head">
+          <span class="ref">C &middot; &sect;3.18.3&ndash;3.18.4</span>
+          <h3>Struktur pembiayaan industri pindar</h3>
+          <p class="chart-sub">Dua indikator komposisi: siapa sumber dananya, dan ke mana dananya disalurkan.</p>
+        </div>
+        <div class="chart-body chart-body--meters" id="viz-meters"></div>
+        <div class="chart-table-wrap"><div class="chart-table" id="tbl-meters"></div></div>
+        <button class="data-toggle" aria-expanded="false" data-table="tbl-meters">Tampilkan tabel</button>
+        <figcaption class="chart-src">
+          Sumber: Infobanknews (April 2026); ANTARA News (April 2025); Vibiznews (Januari 2025) &mdash;
+          <a href="https://infobanknews.com/pendanaan-pindar-dari-lender-individu-tembus-rp-333-t-ojk-buka-peluang-dana-institusi">infobanknews.com</a>
+        </figcaption>
+      </figure>
+
+    </div>
+  </section>
+
+  <!-- ================= CATATAN ================= -->
+  <section class="chapter" id="catatan" aria-labelledby="h-catatan">
+    <div class="chapter-head">
+      <h2 id="h-catatan">Catatan kualitas data</h2>
+      <p>Hal-hal yang tidak terlihat di grafik, dan memengaruhi cara membacanya.</p>
+    </div>
+    <div class="notes">
+      <div class="note">
+        <h3>Angka 131.617 vs 127.283</h3>
+        <p>Beberapa laporan media mengutip 127.283 unit. Angka BPS Statistik Indonesia 2025 yang dipakai di sini adalah 131.617 (per Desember 2024). Makalah menggunakan 131.617 secara konsisten.</p>
+      </div>
+      <div class="note">
+        <h3>Metode ganda pada SNLIK 2025</h3>
+        <p>OJK memakai dua metode pada 2025 (Metode Keberlanjutan dan Metode Cakupan DNKI). Grafik memakai Metode Keberlanjutan (66,46% / 80,51%) supaya seri 2024&ndash;2026 dapat dibandingkan. Metode Cakupan melaporkan 92,74% inklusi &mdash; lebih dekat ke angka 2026.</p>
+      </div>
+      <div class="note">
+        <h3>TWP90 bukan NPF</h3>
+        <p>Beberapa sumber menyebut angka Maret 2025 (2,70%) sebagai NPF gross, sisanya TWP90. Keduanya mengukur keterlambatan 90 hari; grafik menampilkannya sebagai satu seri dengan label generik &ldquo;kualitas kredit&rdquo;.</p>
+      </div>
+      <div class="note">
+        <h3>Periode tidak berjarak sama</h3>
+        <p>Grafik LPBBTI dan TWP90 memakai posisi setara jarak untuk setiap titik data, meskipun jarak antar titik sebenarnya berbeda (1&ndash;7 bulan). Ini mengubah kemiringan visual; baca tabel untuk periode sebenarnya.</p>
+      </div>
+      <div class="note">
+        <h3>Yang tidak ada datanya</h3>
+        <p>Tidak ada data nasional untuk: jumlah lender individu LPBBTI, jumlah koperasi yang menjadi anggota platform SaaS, kolaborasi super-app dengan koperasi, dan dampak digitalisasi terhadap SHU koperasi. Makalah mencantumkan kekosongan ini secara eksplisit; tidak ada grafik yang menggantinya dengan angka taksiran.</p>
+      </div>
+      <div class="note">
+        <h3>Skala warna</h3>
+        <p>Palet kategorikal 8 slot dan palet biru sekuensial lolos uji Delta E OKLab untuk buta warna (CVD &ge; 8 pada pasangan berdekatan, penglihatan normal &ge; 15) pada mode terang maupun gelap. Tiga warna (aqua, kuning, magenta) kontrasnya di bawah 3:1 pada permukaan terang, sehingga setiap grafik selalu mencantumkan label nilai langsung &mdash; warna tidak pernah menjadi satu-satunya penanda.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <p class="foot-main">
+      Visualisasi data untuk makalah &ldquo;Digitalisasi Koperasi dan Integrasi Teknologi
+      Keuangan (Fintech) di Indonesia&rdquo;, mata kuliah Manajemen Koperasi.
+      Seluruh angka berasal dari sumber resmi yang dicantumkan di setiap grafik;
+      tidak ada data yang ditaksir atau diinterpolasi.
+    </p>
+    <p class="foot-sub">
+      Bangun grafik: SVG murni tanpa pustaka. Palet lolos uji CVD.
+      Tampilan tabel &middot; mode terang/gelap &middot; navigasi keyboard pada setiap penanda.
+    </p>
+  </div>
+</footer>
+
+<div id="tooltip" role="status" aria-live="polite" hidden></div>
+
+<script src="visualisasi.js"></script>
+</body>
+</html>

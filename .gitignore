@@ -1,5 +1,6 @@
 # Session/plugin data
 .claude/
+.playwright-mcp/
 
 # Python bytecode cache
 __pycache__/

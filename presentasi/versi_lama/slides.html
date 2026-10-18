@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<title>Slide Presentasi — Digitalisasi Koperasi & Integrasi Fintech</title>
+<style>
+  :root{
+    --bg:#0A1B33;
+    --bg2:#0C2140;
+    --panel:#10264A;
+    --panel2:#0E2140;
+    --line:#1D3E6E;
+    --line2:#264a7d;
+    --ink:#EAF1FA;
+    --muted:#8FA6C4;
+    --muted2:#6C86A8;
+    --blue:#3E8EDE;
+    --blue2:#5FA8F5;
+    --gold:#D9A94C;
+    --green:#3FB97F;
+    --red:#E5564B;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bg);font-family:"Segoe UI","Helvetica Neue",Arial,sans-serif;color:var(--ink);}
+  @page{size:1280px 720px;margin:0}
+  .deck{width:1280px}
+  .slide{
+    position:relative;width:1280px;height:720px;overflow:hidden;
+    background:
+      radial-gradient(1100px 500px at 88% -12%, rgba(62,142,222,.16), transparent 60%),
+      linear-gradient(180deg,var(--bg) 0%, var(--bg2) 100%);
+    padding:52px 64px 64px;
+    page-break-after:always;
+    display:flex;flex-direction:column;
+  }
+  .slide:last-child{page-break-after:auto}
+
+  /* ---------- header ---------- */
+  .kicker{font-size:12.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:10px}
+  .h-title{font-size:33px;line-height:1.14;font-weight:700;letter-spacing:-.012em;color:#fff;margin-bottom:6px}
+  .h-sub{font-size:15px;color:var(--muted);line-height:1.45;max-width:76ch}
+  .rule{height:3px;width:64px;background:linear-gradient(90deg,var(--gold),var(--blue));border-radius:2px;margin:14px 0 20px}
+
+  /* ---------- footer ---------- */
+  .foot{
+    position:absolute;left:64px;right:64px;bottom:22px;
+    display:flex;justify-content:space-between;align-items:center;
+    font-size:11px;color:var(--muted2);letter-spacing:.06em;
+    border-top:1px solid rgba(143,166,196,.14);padding-top:9px;
+  }
+  .foot .num{font-weight:700;color:var(--muted)}
+  .src{font-size:10.5px;color:var(--muted2);line-height:1.5}
+
+  /* ---------- generic layout ---------- */
+  .row{display:flex;gap:28px;flex:1;min-height:0}
+  .col{display:flex;flex-direction:column;min-width:0}
+  .grow{flex:1}
+  ul.bullets{list-style:none;display:flex;flex-direction:column;gap:13px}
+  ul.bullets li{position:relative;padding-left:22px;font-size:15.5px;line-height:1.42;color:#DCE7F5}
+  ul.bullets li::before{content:"";position:absolute;left:0;top:8px;width:8px;height:8px;border-radius:2px;background:var(--blue);box-shadow:0 0 0 3px rgba(62,142,222,.18)}
+  ul.bullets b{color:#fff}
+  ul.bullets .gold{color:var(--gold);font-weight:700}
+  .card{
+    background:linear-gradient(180deg,rgba(16,38,74,.95),rgba(14,33,64,.95));
+    border:1px solid var(--line);border-radius:10px;padding:18px 20px;
+  }
+  .card h4{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:8px;font-weight:700}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{font-size:12px;font-weight:600;color:#CFDDF2;background:rgba(62,142,222,.12);border:1px solid var(--line2);border-radius:999px;padding:5px 12px}
+  .chip.gold{background:rgba(217,169,76,.13);border-color:rgba(217,169,76,.45);color:#F0D9A8}
+  .chartbox{background:rgba(8,24,48,.55);border:1px solid var(--line);border-radius:10px;padding:14px 16px 10px}
+  .chartbox h5{font-size:12.5px;letter-spacing:.09em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:6px}
+  .chartbox svg{display:block;width:100%;height:auto}
+  .note{font-size:10.5px;color:var(--muted2);margin-top:6px;line-height:1.4}
+
+  #ch-snlik svg,#ch-twp-spark svg{width:196px;display:block;margin:0 auto}
+  #s8 .grid6{gap:12px}
+  #s8 .g6{padding:12px 14px}
+  #s8 .g6 p{font-size:11.5px;line-height:1.38}
+  #s8 .g6 h4{font-size:14px}
+  #s8 .rule{margin:10px 0 14px}
+  #s8 .h-title{font-size:30px}
+  .kpi{display:flex;gap:14px}
+  .kpi .k{flex:1;background:linear-gradient(180deg,rgba(16,38,74,.95),rgba(14,33,64,.9));border:1px solid var(--line);border-left:3px solid var(--blue);border-radius:8px;padding:12px 14px}
+  .kpi .k:nth-child(2){border-left-color:var(--gold)}
+  .kpi .k:nth-child(3){border-left-color:var(--red)}
+  .kpi .lab{font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px}
+  .kpi .val{font-size:24px;font-weight:800;letter-spacing:-.02em;color:#fff}
+  .kpi .val span{font-size:13px;color:var(--muted);font-weight:600}
+  .kpi .cap{font-size:11.5px;color:var(--muted);margin-top:3px;line-height:1.35}
+
+  /* ---------- slide 1 ---------- */
+  .s1-hero{flex:1;display:flex;flex-direction:column;justify-content:center;position:relative;z-index:2}
+  .s1-title{font-size:47px;line-height:1.1;font-weight:800;letter-spacing:-.02em;color:#fff;max-width:20ch}
+  .s1-title em{font-style:normal;color:var(--blue2)}
+  .s1-meta{margin-top:26px;display:flex;gap:14px;flex-wrap:wrap}
+  .s1-meta .m{font-size:13px;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:7px 16px;background:rgba(16,38,74,.6)}
+  .s1-meta .m b{color:#fff}
+  .s1-strip{display:flex;gap:0;border:1px solid var(--line);border-radius:12px;overflow:hidden;background:rgba(8,24,48,.55);z-index:2;position:relative}
+  .s1-strip .s{flex:1;padding:16px 20px;border-right:1px solid var(--line)}
+  .s1-strip .s:last-child{border-right:none}
+  .s1-strip .v{font-size:25px;font-weight:800;color:#fff;letter-spacing:-.02em}
+  .s1-strip .v span{font-size:14px;color:var(--gold);font-weight:700}
+  .s1-strip .l{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin-top:3px;font-weight:600}
+  .deco{position:absolute;top:0;right:0;width:560px;height:420px;z-index:1;opacity:.85}
+
+  /* ---------- slide 3 cards ---------- */
+  .qcards{display:flex;gap:22px;flex:1}
+  .qcard{flex:1;background:linear-gradient(160deg,rgba(18,44,86,.95),rgba(11,28,56,.95));border:1px solid var(--line);border-radius:12px;padding:26px 24px;display:flex;flex-direction:column}
+  .qcard .no{font-size:44px;font-weight:800;color:var(--blue);letter-spacing:-.04em;line-height:1;margin-bottom:14px}
+  .qcard h3{font-size:19px;font-weight:700;color:#fff;line-height:1.28;margin-bottom:10px}
+  .qcard p{font-size:13.5px;color:var(--muted);line-height:1.5}
+
+  /* ---------- slide 4 layers ---------- */
+  .layers{display:flex;flex-direction:column;gap:14px;flex:1;justify-content:center}
+  .layer{display:flex;align-items:stretch;gap:0;border:1px solid var(--line2);border-radius:12px;overflow:hidden;background:rgba(16,38,74,.75)}
+  .layer .tag{width:210px;flex:none;padding:16px 18px;display:flex;flex-direction:column;justify-content:center;border-right:1px solid var(--line2)}
+  .layer .tag .n{font-size:11px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold)}
+  .layer .tag .t{font-size:18px;font-weight:700;color:#fff;margin-top:3px}
+  .layer .body{flex:1;padding:14px 20px;display:flex;flex-direction:column;justify-content:center;gap:7px}
+  .layer .body .ins{font-size:13px;color:var(--muted);line-height:1.4}
+  .layer .body .ins b{color:#DCE7F5}
+  .layer .out{width:250px;flex:none;padding:14px 18px;border-left:1px solid var(--line2);display:flex;flex-direction:column;justify-content:center;background:rgba(62,142,222,.07)}
+  .layer .out .lab{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:4px}
+  .layer .out .v{font-size:15.5px;font-weight:700;color:var(--blue2);line-height:1.3}
+  .arrowdown{text-align:center;color:var(--muted2);font-size:16px;line-height:1;margin:-6px 0}
+
+  /* ---------- slide 8 grid ---------- */
+  .grid6{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:14px;flex:1}
+  .g6{background:linear-gradient(160deg,rgba(18,44,86,.92),rgba(11,28,56,.92));border:1px solid var(--line);border-radius:10px;padding:14px 16px;display:flex;flex-direction:column}
+  .g6 .h{display:flex;align-items:baseline;gap:9px;margin-bottom:6px}
+  .g6 .no{font-size:19px;font-weight:800;color:var(--gold)}
+  .g6 h4{font-size:14.5px;font-weight:700;color:#fff;line-height:1.25}
+  .g6 p{font-size:12px;color:var(--muted);line-height:1.42}
+  .g6 svg{margin-top:auto}
+
+  /* ---------- slide 9 ---------- */
+  .synth{display:flex;gap:14px;flex:1}
+  .synth .s3{flex:1;border:1px solid var(--line2);border-radius:12px;background:rgba(16,38,74,.8);padding:20px 18px;display:flex;flex-direction:column}
+  .synth .s3 .n{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold);font-weight:700}
+  .synth .s3 h3{font-size:17px;color:#fff;font-weight:700;margin:5px 0 8px}
+  .synth .s3 p{font-size:12.5px;color:var(--muted);line-height:1.5}
+  .quoteband{margin-top:16px;border-left:4px solid var(--gold);background:rgba(217,169,76,.08);border-radius:0 10px 10px 0;padding:14px 20px;font-size:14.5px;color:#E9D6AC;line-height:1.5}
+
+  /* ---------- slide 10 ---------- */
+  .sug{display:flex;gap:18px;flex:1}
+  .sug .c3{flex:1;display:flex;flex-direction:column;gap:10px}
+  .sug .c3 > .hd{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:700;color:var(--gold);padding-bottom:6px;border-bottom:1px solid var(--line2)}
+  .sug .item{background:rgba(16,38,74,.8);border:1px solid var(--line);border-radius:8px;padding:11px 14px;font-size:12.8px;color:#DCE7F5;line-height:1.42}
+  .sug .item b{color:#fff}
+  .sug .item .n{display:inline-block;font-weight:800;color:var(--blue2);margin-right:6px}
+
+  /* ---------- slide 11 ---------- */
+  .closing{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;gap:22px}
+  .closing .q{font-size:34px;line-height:1.32;font-weight:700;color:#fff;max-width:26ch;letter-spacing:-.01em}
+  .closing .q em{font-style:italic;color:var(--gold)}
+  .closing .ty{font-size:16px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);font-weight:700}
+  .closing .who{font-size:13px;color:var(--muted2)}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ============ SLIDE 1 — JUDUL ============ -->
+<section class="slide" id="s1">
+  <svg class="deco" viewBox="0 0 560 420" fill="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="gDeco" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#3E8EDE" stop-opacity=".55"/>
+        <stop offset="1" stop-color="#0A1B33" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+    <rect x="330" y="40" width="220" height="360" fill="url(#gDeco)" rx="4"/>
+    <g fill="#5FA8F5">
+      <rect x="350" y="290" width="26" height="90" rx="3" opacity=".9"/>
+      <rect x="388" y="240" width="26" height="140" rx="3" opacity=".8"/>
+      <rect x="426" y="190" width="26" height="190" rx="3" opacity=".7"/>
+      <rect x="464" y="130" width="26" height="250" rx="3" opacity=".55"/>
+      <rect x="502" y="70"  width="26" height="310" rx="3" opacity=".4"/>
+    </g>
+    <g fill="#D9A94C">
+      <rect x="350" y="210" width="26" height="66" rx="3" opacity=".85"/>
+      <rect x="388" y="160" width="26" height="66" rx="3" opacity=".7"/>
+      <rect x="426" y="110" width="26" height="66" rx="3" opacity=".55"/>
+    </g>
+    <g stroke="#3E8EDE" stroke-width="1.2" opacity=".5">
+      <line x1="1" y1="380" x2="560" y2="380"/>
+      <line x1="1" y1="320" x2="560" y2="320" stroke-dasharray="4 6"/>
+      <line x1="1" y1="260" x2="560" y2="260" stroke-dasharray="4 6"/>
+    </g>
+    <g fill="#8FA6C4" opacity=".8">
+      <circle cx="120" cy="70" r="3"/><circle cx="190" cy="40" r="2.4"/>
+      <circle cx="255" cy="95" r="2.8"/><circle cx="150" cy="150" r="2.2"/>
+      <circle cx="90" cy="220" r="2.6"/><circle cx="230" cy="200" r="2.2"/>
+    </g>
+    <g stroke="#264a7d" stroke-width="1" opacity=".8">
+      <line x1="120" y1="70" x2="190" y2="40"/><line x1="190" y1="40" x2="255" y2="95"/>
+      <line x1="120" y1="70" x2="150" y2="150"/><line x1="150" y1="150" x2="90" y2="220"/>
+      <line x1="150" y1="150" x2="230" y2="200"/>
+    </g>
+  </svg>
+
+  <div class="s1-hero">
+    <div class="kicker">Makalah Mata Kuliah Manajemen Koperasi &middot; 12&ndash;13 Oktober 2026</div>
+    <div class="s1-title">Strategi Modernisasi &amp; Digitalisasi Koperasi, <em>Koperasi Modern</em>, dan Integrasi Teknologi Keuangan (Fintech)</div>
+    <div class="s1-meta">
+      <div class="m">Penyusun: <b>Nabil Humaidy</b></div>
+      <div class="m">Periode data utama: <b>2024&ndash;2026</b></div>
+      <div class="m">Sumber: <b>BPS &middot; OJK &middot; Bank Indonesia &middot; Kemenkop &middot; ICA</b></div>
+    </div>
+  </div>
+  <div class="s1-strip">
+    <div class="s"><div class="v">131.617</div><div class="l">Koperasi aktif (BPS, 2024)</div></div>
+    <div class="s"><div class="v">81.485</div><div class="l">Kopdes Merah Putih berbadan hukum</div></div>
+    <div class="s"><div class="v">Rp 106,94 <span>T</span></div><div class="l">Outstanding pembiayaan LPBBTI (Agu 2026)</div></div>
+    <div class="s"><div class="v">Rp 600,69 <span>T</span></div><div class="l">Nilai transaksi QRIS, Semester I 2026</div></div>
+  </div>
+  <div class="foot"><span>Strategi Digitalisasi Koperasi &amp; Integrasi Fintech</span><span class="num">01 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 2 — LATAR BELAKANG ============ -->
+<section class="slide" id="s2">
+  <div class="kicker">Latar Belakang</div>
+  <div class="h-title">Soko Guru yang Tertinggal dari Gelombang Digital</div>
+  <div class="rule"></div>
+  <div class="row">
+    <div class="col" style="width:47%">
+      <ul class="bullets">
+        <li><b>131.617 koperasi aktif</b> (BPS 2024) &mdash; terbanyak di dunia, namun kontribusi terhadap PDB hanya <span class="gold">1,17%</span> (target Menkop: 10&ndash;20%).</li>
+        <li>Partisipasi penduduk sebagai anggota baru <b>8,41%</b> &mdash; jauh di bawah rata-rata dunia <b>16,31%</b>.</li>
+        <li><b>Tidak ada satu pun koperasi Indonesia</b> di Top 300 World Co-operative Monitor 2025, padahal turnover 300 koperasi global mencapai <b>US$2,79 triliun</b>.</li>
+        <li>Sekitar <b>70% koperasi bergerak di simpan pinjam</b>; sektor riil kurang dari 30%.</li>
+        <li>Di sisi lain, ekonomi digital Indonesia tumbuh pesat: GMV <b>~US$100 miliar</b> (e-Conomy SEA 2025), penetrasi internet <b>81,7%</b>, 25,5 juta UMKM go digital.</li>
+      </ul>
+      <div style="margin-top:auto">
+        <div class="kpi">
+          <div class="k"><div class="lab">Kontribusi PDB</div><div class="val">1,17<span>%</span></div><div class="cap">dari target 10&ndash;20% (Menkop Budi Arie, Des 2024)</div></div>
+          <div class="k"><div class="lab">Partisipasi anggota</div><div class="val">8,41<span>%</span></div><div class="cap">rata-rata dunia 16,31%</div></div>
+          <div class="k"><div class="lab">Koperasi di Top 300 global</div><div class="val">0<span> dari 300</span></div><div class="cap">World Co-operative Monitor 2025 (ICA&middot;ICETT)</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="col grow" style="gap:12px">
+      <div class="chartbox" style="flex:1;display:flex;flex-direction:column">
+        <h5>Jumlah koperasi aktif di Indonesia, 2021&ndash;2024 (Tabel 3.1)</h5>
+        <div id="ch-koperasi" style="flex:1"></div>
+        <div class="note">Sumbu vertikal dimulai pada 120.000 unit. Pertumbuhan jumlah unit (+3%) tidak mencerminkan pertumbuhan usaha.</div>
+      </div>
+      <div class="src">Sumber: BPS &mdash; &ldquo;Jumlah Koperasi Aktif Menurut Provinsi&rdquo;, Statistik Indonesia 2025; CNBC Indonesia (18 Des 2024); ANTARA News (21 Mei 2026).</div>
+    </div>
+  </div>
+  <div class="foot"><span>Latar Belakang</span><span class="num">02 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 3 — RUMUSAN MASALAH ============ -->
+<section class="slide" id="s3">
+  <div class="kicker">Rumusan Masalah</div>
+  <div class="h-title">Tiga Pertanyaan, Satu Arsitektur</div>
+  <div class="rule"></div>
+  <div class="qcards">
+    <div class="qcard">
+      <div class="no">01</div>
+      <h3>Strategi Modernisasi &amp; Digitalisasi Koperasi</h3>
+      <p>Strategi dan kebijakan apa yang dilakukan pemerintah Indonesia (Kementerian Koperasi) dalam memodernisasi dan mendigitalisasi koperasi pada periode 2024&ndash;2026?</p>
+    </div>
+    <div class="qcard">
+      <div class="no">02</div>
+      <h3>Digitalisasi Layanan Koperasi (Koperasi Modern)</h3>
+      <p>Bagaimana wujud nyata digitalisasi layanan koperasi menjadi &ldquo;koperasi modern&rdquo;, platform dan infrastruktur pendukungnya, serta apa dampaknya?</p>
+    </div>
+    <div class="qcard">
+      <div class="no">03</div>
+      <h3>Integrasi Teknologi Keuangan (Fintech)</h3>
+      <p>Bagaimana integrasi fintech dengan koperasi di Indonesia, model kerja sama apa yang digunakan, serta apa manfaat dan risikonya?</p>
+    </div>
+  </div>
+  <div style="margin-top:24px" class="chips">
+    <span class="chip gold">Periode data utama: 2024&ndash;2026</span>
+    <span class="chip">Metode: studi literatur (library research)</span>
+    <span class="chip">Sumber: BPS, OJK, BI, Kemenkop, BPK, ICA, AFPI, media kredibel</span>
+    <span class="chip">Setiap angka disertai sumber &mdash; traceability akademik</span>
+  </div>
+  <div class="foot"><span>Rumusan Masalah</span><span class="num">03 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 4 — KERANGKA PEMIKIRAN ============ -->
+<section class="slide" id="s4">
+  <div class="kicker">Kerangka Pemikiran</div>
+  <div class="h-title">Tiga Lapisan Arsitektur yang Saling Menembus</div>
+  <div class="rule"></div>
+  <div class="layers">
+    <div class="layer">
+      <div class="tag"><div class="n">Lapisan 1</div><div class="t">Strategi</div></div>
+      <div class="body">
+        <div class="ins">Mengatur arah dan kecepatan transformasi &mdash; <b>Inpres 9/2025, UU P2SK (direvisi 2026), roadmap 4 pilar, Command Center Kemenkop</b></div>
+        <div class="chips">
+          <span class="chip">Inpres 9/2025: 80 ribu Kopdes/Kelurahan Merah Putih</span>
+          <span class="chip">Roadmap 4 Pilar</span>
+          <span class="chip">Command Center (Des 2025)</span>
+        </div>
+      </div>
+      <div class="out"><div class="lab">Output</div><div class="v">80.081 KDMP beroperasi &middot; target kontribusi PDB naik</div></div>
+    </div>
+    <div class="arrowdown">&#9660;</div>
+    <div class="layer">
+      <div class="tag"><div class="n">Lapisan 2</div><div class="t">Layanan Digital</div></div>
+      <div class="body">
+        <div class="ins">Mengubah cara koperasi melayani anggota &mdash; <b>Si Kopdes, microsite Simkopdes, Digi Koperasi (Telkom), QRIS, marketplace</b></div>
+        <div class="chips">
+          <span class="chip">Simkopdes &amp; Kopdes Mobile</span>
+          <span class="chip">Digi Koperasi</span>
+          <span class="chip">PaDi UMKM &middot; Kophub</span>
+          <span class="chip">QRIS &middot; BI-FAST &middot; SNAP</span>
+        </div>
+      </div>
+      <div class="out"><div class="lab">Output</div><div class="v">42.349 koperasi memiliki akun Simkopdes dari 81.485 berbadan hukum</div></div>
+    </div>
+    <div class="arrowdown">&#9660;</div>
+    <div class="layer">
+      <div class="tag"><div class="n">Lapisan 3</div><div class="t">Fintech</div></div>
+      <div class="body">
+        <div class="ins">Mengalirkan dana dan pembayaran &mdash; <b>AgenBRILink, BNI Agen46, LPBBTI, KUR, BI-FAST</b></div>
+        <div class="chips">
+          <span class="chip">AgenBRILink: 1,2 juta+ titik</span>
+          <span class="chip">BNI Agen46: 226.143 agen</span>
+          <span class="chip">LPBBTI: Rp106,94 T</span>
+        </div>
+      </div>
+      <div class="out"><div class="lab">Output</div><div class="v">Rp1,2 T salur ke 306 koperasi (BRI, Sep 2025)</div></div>
+    </div>
+  </div>
+  <div style="margin-top:16px;font-size:13.5px;color:var(--muted);line-height:1.45">
+    <b style="color:#fff">Logika integrasi:</b> strategi menciptakan <i>scale</i> &amp; legitimasi &middot; layanan digital menciptakan efisiensi &amp; transparansi &middot; fintech menciptakan likuiditas &amp; jangkauan. Ketiganya harus menyatu &mdash; jika tidak, terfragmentasi seperti era pra-2025.
+  </div>
+  <div class="foot"><span>Kerangka Pemikiran</span><span class="num">04 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 5 — TOPIK 1: STRATEGI ============ -->
+<section class="slide" id="s5">
+  <div class="kicker">Topik 1 &middot; Strategi Modernisasi &amp; Digitalisasi</div>
+  <div class="h-title">Ekosistem Koperasi Digital yang Dipimpin Negara</div>
+  <div class="rule"></div>
+  <div class="row">
+    <div class="col" style="width:50%">
+      <ul class="bullets">
+        <li><b>Inpres No. 9 Tahun 2025</b> (27 Mar 2025): target <b>80 ribu</b> Kopdes/Kelurahan Merah Putih; peresmian nasional <b>80.081 KDMP</b> (21 Juli 2025) oleh Presiden Prabowo.</li>
+        <li><b>Roadmap 4 Pilar:</b> Infrastruktur &middot; Profesionalisme Tata Kelola &middot; Pembiayaan Kapasitas Usaha &middot; Pengawasan berbasis risiko.</li>
+        <li><b>Platform:</b> Si Kopdes, microsite Simkopdes, Kopdes Mobile, Command Center Kemenkop, Digi Koperasi (Telkom sebagai integrator sistem).</li>
+        <li><b>Pembiayaan:</b> LPDB Rp22,9 T (2008&ndash;Okt 2026) ke 3.929 koperasi di 36 provinsi; 15 inkubator bisnis; sistem tanpa tunai (modal barang) untuk transparansi.</li>
+        <li><b>Kewajiban:</b> koperasi harus masuk microsite &mdash; jika tidak terdata, <span class="gold">proses bisnis tidak dilanjutkan</span> (keagenan pupuk/elpiji &amp; pembiayaan).</li>
+      </ul>
+    </div>
+    <div class="col grow" style="gap:12px">
+      <div class="chartbox" style="flex:1;display:flex;flex-direction:column">
+        <h5>Adopsi digital Kopdes Merah Putih per 15 Sep 2025 (Tabel 3.4)</h5>
+        <div id="ch-funnel" style="flex:1"></div>
+        <div class="note">Lebar batang menggunakan skala akar (&radic;) agar setiap tingkat terlihat. Persentase = dari total berbadan hukum. Setengah dari koperasi yang diwajibkan belum masuk sistem; baru ~1 dari 9 yang aktif mengelola kehadiran digitalnya.</div>
+      </div>
+      <div class="src">Sumber: ANTARA News (20 Sep 2025 &mdash; peluncuran 3 platform &amp; data capaian); Sekretariat Negara (Inpres 9/2025); Kontan (22 Jul 2025); Kompas (12 Okt 2026).</div>
+    </div>
+  </div>
+  <div class="foot"><span>Topik 1 &middot; Strategi</span><span class="num">05 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 6 — TOPIK 2: LAYANAN ============ -->
+<section class="slide" id="s6">
+  <div class="kicker">Topik 2 &middot; Digitalisasi Layanan Koperasi</div>
+  <div class="h-title">Koperasi Modern: dari Pembukuan Tutup ke Ekosistem Digital</div>
+  <div class="rule"></div>
+  <div class="row" style="flex:none;height:118px">
+    <div class="col" style="width:100%">
+      <ul class="bullets" style="display:grid;grid-template-columns:1fr 1fr;gap:9px 26px">
+        <li><b>Layanan terimplementasi:</b> simpan pinjam digital (tabungan online, BI-FAST/SNAP, e-Proposal &amp; credit scoring LPDB), kartu anggota digital, marketplace, PPOB, <b>mini ATM/agen</b>.</li>
+        <li><b>Contoh nyata:</b> KSP Nasari <b>42.000 anggota</b> via aplikasi NADI; KWSG Gresik <b>7 aplikasi</b> terintegrasi; KKMP Banjarsari anggota <b>32&rarr;138</b>, omzet 2&times;; INKOPPAS Link <b>2.000+ koperasi pasar</b>.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="row" style="margin-top:16px">
+    <div class="col" style="flex:1.25">
+      <div class="chartbox" style="height:100%;display:flex;flex-direction:column">
+        <h5>QRIS: jumlah transaksi melipatgandakan, nilai tidak (Tabel 3.5)</h5>
+        <div id="ch-qris" style="flex:1"></div>
+        <div class="note">Nilai per transaksi rata-rata turun ~50% &mdash; QRIS bergeser ke pembayaran rutin bernilai kecil. Merchant 39,3 juta &rarr; 44,86 juta; pengguna 57 &rarr; 66 juta.</div>
+      </div>
+    </div>
+    <div class="col" style="flex:1">
+      <div class="card" style="height:100%">
+        <h4>Infrastruktur pendukung</h4>
+        <ul class="bullets" style="gap:10px">
+          <li><b>QRIS &mdash; 12,55 miliar transaksi / Rp600,69 T</b> (Semester I 2026, +107% YoY).</li>
+          <li><b>BI-FAST &mdash; Rp3.777 T</b> (Triwulan II 2026, +38,09% YoY) + standar SNAP.</li>
+          <li><b>AgenBRILink</b> di KDMP: transaksi +20&ndash;30% (Padang Mantinggi); 1,2 juta titik nasional.</li>
+          <li><b>ERP &amp; kedaulatan data:</b> IDCI dorong ERP anak bangsa; KPBS Pangalengan dibangun OJK&ndash;Swiss.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:12px" class="src">Sumber: Bank Indonesia SP 27/170/DKom (4 Agu 2025) &amp; pengumuman RDG Jul 2026; ANTARA News (6 Agu 2026, 3 Nov 2025, 15 Mei 2025); detikFinance (19 Nov 2025); Kontan (7 Sep 2026); detikNews (27 Sep 2026).</div>
+  <div class="foot"><span>Topik 2 &middot; Layanan Digital</span><span class="num">06 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 7 — TOPIK 3: FINTECH ============ -->
+<section class="slide" id="s7">
+  <div class="kicker">Topik 3 &middot; Integrasi Teknologi Keuangan</div>
+  <div class="h-title">Fintech sebagai Saluran Likuiditas ke Koperasi</div>
+  <div class="rule"></div>
+  <div class="row" style="flex:none">
+    <div class="col" style="flex:1.35">
+      <div class="chartbox" style="height:318px;display:flex;flex-direction:column">
+        <h5>Outstanding pembiayaan LPBBTI ( industri &ldquo;pindar&rdquo; ), Rp triliun (Tabel 3.6)</h5>
+        <div id="ch-lpbbti" style="flex:1"></div>
+      </div>
+    </div>
+    <div class="col" style="flex:1;gap:12px">
+      <div class="chartbox" style="height:200px;display:flex;flex-direction:column">
+        <h5>Kualitas kredit: TWP90 &rarr; batas OJK 5%</h5>
+        <div id="ch-twp" style="flex:1"></div>
+      </div>
+      <div class="kpi" style="flex-direction:column;gap:9px">
+        <div class="k"><div class="lab">Pertumbuhan YoY</div><div class="val">+22,07<span>% (Agu 2026)</span></div></div>
+        <div class="k"><div class="lab">Penyelenggara berizin &middot; peminjam aktif</div><div class="val">94 &middot; 26,91 juta rekening</div></div>
+      </div>
+    </div>
+  </div>
+  <div style="margin-top:14px">
+    <div style="font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-bottom:7px">Tujuh model integrasi koperasi&ndash;fintech (Tabel 3.7) &mdash; model dominan: koperasi sebagai agen perbankan</div>
+    <div class="chips">
+      <span class="chip gold">1 &middot; Agen/simpul layanan keuangan &mdash; AgenBRILink, BNI Agen46, Mandiri Agen</span>
+      <span class="chip">2 &middot; Channeling bank via P2P lending (BRI&ndash;Investree)</span>
+      <span class="chip">3 &middot; Koperasi sebagai penyelenggara LPBBTI (moratorium)</span>
+      <span class="chip">4 &middot; Konsorsium/koperasi sekunder</span>
+      <span class="chip">5 &middot; SaaS digitalisasi koperasi (Digi Koperasi, INKOPPAS)</span>
+      <span class="chip">6 &middot; Integrasi pembayaran digital (QRIS, PPOB)</span>
+      <span class="chip">7 &middot; Marketplace produk koperasi (PaDi UMKM, Kophub)</span>
+    </div>
+  </div>
+  <div class="src" style="margin-top:10px">Sumber: OJK (statistik &amp; direktori LPBBTI per 31 Jul 2026); Kontan; ANTARA News (6 Agu 2026, 24 Agu 2026); Infobanknews (Apr 2026: 75,59% pendanaan dari perbankan). Bukti konkret: BRI Rp1,2 T ke 306 koperasi; BNI Agen46 79,81 juta transaksi (+37,2%); Mandiri&ndash;Kospin Jasa 600.000 anggota.</div>
+  <div class="foot"><span>Topik 3 &middot; Fintech</span><span class="num">07 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 8 — ANALISIS KRITIS ============ -->
+<section class="slide" id="s8">
+  <div class="kicker">Analisis Kritis &amp; Sintesis</div>
+  <div class="h-title">Enam Temuan Kritis</div>
+  <div class="rule"></div>
+  <div class="grid6">
+    <div class="g6">
+      <div class="h"><span class="no">01</span><h4>Paradoks jumlah vs kualitas</h4></div>
+      <p>Koperasi terbanyak di dunia (131.617), tapi kontribusi PDB <b style="color:#fff">1,17%</b> dan absen dari Top 300 global. Selama ini Indonesia membangun jumlah, bukan kapasitas.</p>
+    </div>
+    <div class="g6">
+      <div class="h"><span class="no">02</span><h4>Model state-led: cepat tapi berisiko</h4></div>
+      <p>Skala &amp; standardisasi tercapai, tapi menimbulkan ketergantungan pada BUMN/platform besar, beban fiskal (estimasi Rp400 T untuk 80 ribu KDMP), dan isu kedaulatan data desa.</p>
+    </div>
+    <div class="g6">
+      <div class="h"><span class="no">03</span><h4>Kesenjangan digital antar-koperasi</h4></div>
+      <p>Koperasi mapan (Kospin Jasa aset Rp7,8 T) vs KDMP baru (hanya 52% punya akun Simkopdes) vs 28,5% koperasi yang bahkan tidak melaksanakan RAT. Yang tidak masuk sistem dikeluarkan dari rantai ekonomi.</p>
+    </div>
+    <div class="g6">
+      <div class="h"><span class="no">04</span><h4>Kasus TaniHub: digitalisasi &ne; tata kelola</h4></div>
+      <p>Vonis Rp364,2 miliar uang pengganti &amp; 2&ndash;9 tahun penjara (6 terdakwa). Platform canggih tetap bisa disalahgunakan jika pengawasan lemah &mdash; koperasi perlu pengawasan internal yang independen.</p>
+    </div>
+    <div class="g6">
+      <div class="h"><span class="no">05</span><h4>Kesenjangan literasi&ndash;inklusi</h4></div>
+      <p>Inklusi keuangan 93,61% melampaui literasi 69,57%; literasi fintech hanya <b style="color:#fff">24,90%</b>. Jutaan orang memakai tanpa memahami risiko.</p>
+      <div id="ch-snlik" style="margin-top:6px"></div>
+    </div>
+    <div class="g6">
+      <div class="h"><span class="no">06</span><h4>Kualitas kredit industri pindar memburuk</h4></div>
+      <p>TWP90 naik dari 2,60% (Agu 2025) ke <b style="color:#fff">4,73%</b> (Agu 2026) &mdash; mendekati batas OJK 5%; 18 penyelenggara di atas 5% per Mei 2026.</p>
+      <div id="ch-twp-spark" style="margin-top:6px"></div>
+    </div>
+  </div>
+  <div class="src" style="margin-top:12px">Sumber: SNLIK 2026 (OJK&ndash;LPS&ndash;BPS, 11 Agu 2026); Kontan (Mei 2026, Agu 2026); detikNews (10 Sep 2026); IDCI via ANTARA News (15 Mei 2025).</div>
+  <div class="foot"><span>Analisis Kritis</span><span class="num">08 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 9 — KESIMPULAN ============ -->
+<section class="slide" id="s9">
+  <div class="kicker">Kesimpulan</div>
+  <div class="h-title">Tiga Topik, Satu Arsitektur &mdash; Koperasi sebagai&hellip;</div>
+  <div class="rule"></div>
+  <div style="display:flex;gap:24px;flex:none">
+    <div class="col" style="flex:1.15">
+      <div class="synth" style="flex-direction:column;gap:12px">
+        <div class="s3"><div class="n">Lapisan 1 &middot; Strategi</div><h3>Scale &amp; legitimasi</h3><p>Ekosistem koperasi digital yang dipimpin negara: Inpres 9/2025, roadmap 4 pilar, Command Center, LPDB Rp22,9 T. Digitalisasi diposisikan sebagai <b style="color:#DCE7F5">syarat</b>, bukan pilihan.</p></div>
+        <div class="s3"><div class="n">Lapisan 2 &middot; Layanan digital</div><h3> Efisiensi &amp; transparansi</h3><p>Simkopdes, Digi Koperasi, QRIS, dan marketplace telah menyatu menjadi infrastruktur koperasi modern &mdash; meski adopsi masih parsial (52% akun Simkopdes, 11,4% aktif).</p></div>
+        <div class="s3"><div class="n">Lapisan 3 &middot; Fintech</div><h3>Likuiditas &amp; jangkauan</h3><p>Tujuh model integrasi dengan &ldquo;koperasi sebagai agen perbankan&rdquo; sebagai model dominan; BRI menyalurkan Rp1,2 T ke 306 koperasi; industri pindar Rp106,94 T (+22,07% YoY).</p></div>
+      </div>
+    </div>
+    <div class="col" style="flex:1;justify-content:center;gap:16px">
+      <div class="card" style="border-left:4px solid var(--gold)">
+        <h4>Posisi strategis koperasi</h4>
+        <div style="font-size:17px;font-weight:700;color:#fff;line-height:1.4">&ldquo;Mekanisme sosial yang inheren&rdquo;</div>
+        <p style="font-size:13.5px;color:var(--muted);line-height:1.55;margin-top:10px">Kepercayaan komunitas, kedekatan pengurus dengan anggota, dan pengawasan kolektif yang mengurangi asimetri informasi &mdash; aset langka yang tidak dimiliki platform digital murni, dan solusi alami untuk kesenjangan literasi&ndash;inklusi keuangan.</p>
+      </div>
+      <div class="kpi" style="flex-direction:column;gap:10px">
+        <div class="k"><div class="lab">Risiko utama</div><div class="val" style="font-size:19px">TWP90 4,73% &rarr; batas 5%</div><div class="cap">koperasi yang masuk ekosistem ikut menanggung risiko siklikal</div></div>
+        <div class="k"><div class="lab">Peluang utama</div><div class="val" style="font-size:19px">Literasi fintech 24,90%</div><div class="cap">koperasi bisa menjadi jembatan edukasi yang tidak bisa diberikan platform digital</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="quoteband">Digitalisasi tanpa tata kelola yang baik justru mempercepat risiko, bukan menguranginya. Agar tidak tergerus menjadi sekadar ekstensionitas bank, koperasi harus memastikan kepemilikan atas data dan hubungan dengan anggotanya.</div>
+  <div class="foot"><span>Kesimpulan</span><span class="num">09 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 10 — SARAN ============ -->
+<section class="slide" id="s10">
+  <div class="kicker">Saran</div>
+  <div class="h-title">Rekomendasi untuk Tiga Pemangku Kepentingan</div>
+  <div class="rule"></div>
+  <div class="sug">
+    <div class="c3">
+      <div class="hd">Pemerintah (Kemenkop, OJK, BI)</div>
+      <div class="item"><span class="n">1</span><b>Percepat adopsi platform digital KDMP</b> &mdash; 48% belum memiliki akun Simkopdes; pendampingan teknis berskala besar.</div>
+      <div class="item"><span class="n">2</span><b>Perbesar kapasitas pendampingan</b> &mdash; 15 inkubator LPDB (~225 koperasi/batch) tidak sebanding dengan 81.485 KDMP; replikasi pola &ldquo;kakak asuh&rdquo;.</div>
+      <div class="item"><span class="n">3</span><b>Evaluasi moratorium izin LPBBTI untuk koperasi</b> &mdash; agar koperasi tidak selamanya di posisi nilai tambah terendah.</div>
+      <div class="item"><span class="n">4</span><b>Susun kerangka kepemilikan data agregat koperasi</b> &mdash; UU PDP mengatur data perorangan, bukan data ekonomi desa.</div>
+      <div class="item"><span class="n">5</span><b>Lengkapi UU Perkoperasian baru</b> &mdash; LPS khusus &amp; otoritas pengawas koperasi yang independen.</div>
+    </div>
+    <div class="c3">
+      <div class="hd">Pengurus Koperasi</div>
+      <div class="item"><span class="n">1</span><b>Masuk &amp; perbarui data di microsite Simkopdes</b> &mdash; gerbang menuju seluruh layanan ekosistem.</div>
+      <div class="item"><span class="n">2</span><b>Adopsi pembukuan digital bertahap</b> &mdash; mulai dari transaksi, keanggotaan, kartu anggota digital, sebelum ERP penuh.</div>
+      <div class="item"><span class="n">3</span><b>Kembangkan unit simpan pinjam dengan hati-hati</b> &mdash; setelah keanggotaan kuat &amp; modal sendiri terbentuk (tahun ke-4/5 KDMP).</div>
+      <div class="item"><span class="n">4</span><b>Perkuat fungsi pengawasan internal</b> &mdash; pengurus &amp; pengelola wajib lolos uji kepatutan &amp; sertifikasi kompetensi.</div>
+      <div class="item"><span class="n">5</span><b>Manfaatkan QRIS</b> &mdash; MDR 0% untuk Usaha Mikro (transaksi &le;Rp500.000, efektif 1 Okt 2026).</div>
+    </div>
+    <div class="c3">
+      <div class="hd">Akademisi &amp; Peneliti</div>
+      <div class="item"><span class="n">1</span><b>Riset kuantitatif dampak digitalisasi pada kinerja koperasi</b> &mdash; gap terbesar; bukti yang ada (56,3%/52%/51,6%) berasal dari riset BRI tentang UMKM, bukan koperasi.</div>
+      <div class="item"><span class="n">2</span><b>Evaluasi efektivitas KDKMP secara independen</b> &mdash; perbandingan desa dengan KDMP vs tanpa KDMP (analisis counterfactual).</div>
+      <div class="item"><span class="n">3</span><b>Kaji model platform co-op</b> &mdash; menempatkan koperasi sebagai pemilik platform, bukan hanya pengguna.</div>
+      <div class="item" style="background:rgba(217,169,76,.08);border-color:rgba(217,169,76,.4)"><span class="n" style="color:var(--gold)">Note</span><b style="color:#F0D9A8">Gap data:</b> tidak ada data nasional jumlah lender individu, adopsi SaaS koperasi, kolaborasi super-app, maupun dampak KDMP terhadap pendapatan desa.</div>
+    </div>
+  </div>
+  <div class="foot"><span>Saran</span><span class="num">10 / 11</span></div>
+</section>
+
+<!-- ============ SLIDE 11 — PENUTUP ============ -->
+<section class="slide" id="s11">
+  <svg class="deco" viewBox="0 0 560 420" fill="none" aria-hidden="true" style="opacity:.6">
+    <defs><linearGradient id="gDeco2" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3E8EDE" stop-opacity=".4"/><stop offset="1" stop-color="#0A1B33" stop-opacity="0"/></linearGradient></defs>
+    <g stroke="#264a7d" stroke-width="1" opacity=".85">
+      <line x1="1" y1="380" x2="560" y2="380"/><line x1="1" y1="300" x2="560" y2="300" stroke-dasharray="4 6"/>
+      <line x1="1" y1="220" x2="560" y2="220" stroke-dasharray="4 6"/><line x1="1" y1="140" x2="560" y2="140" stroke-dasharray="4 6"/>
+    </g>
+    <path d="M40 340 L150 320 L260 330 L370 250 L480 180 L545 120" stroke="#D9A94C" stroke-width="3" fill="none" stroke-linecap="round"/>
+    <path d="M40 360 L150 350 L260 345 L370 320 L480 300 L545 290" stroke="#3E8EDE" stroke-width="3" fill="none" stroke-linecap="round" opacity=".9"/>
+    <g fill="#5FA8F5"><circle cx="40" cy="340" r="4"/><circle cx="150" cy="320" r="4"/><circle cx="260" cy="330" r="4"/><circle cx="370" cy="250" r="4"/><circle cx="480" cy="180" r="4"/><circle cx="545" cy="120" r="4"/></g>
+  </svg>
+  <div class="closing">
+    <div class="q">&ldquo;Digitalisasi adalah <em>kebutuhan</em>, bukan kemewahan &mdash; tetapi teknologi hanya bermakna jika <em>dikuasai dan diawasi</em> oleh anggota.&rdquo;</div>
+    <div style="width:72px;height:3px;background:linear-gradient(90deg,var(--gold),var(--blue));border-radius:2px"></div>
+    <div class="ty">Terima Kasih</div>
+    <div class="who">Nabil Humaidy &middot; Makalah Manajemen Koperasi &middot; Oktober 2026</div>
+    <div class="chips" style="justify-content:center;margin-top:6px">
+      <span class="chip">131.617 koperasi harus terdigitalisasi</span>
+      <span class="chip gold">Mekanisme sosial adalah keunggulan koperasi</span>
+      <span class="chip">Data 2024&ndash;2026 &middot; BPS &middot; OJK &middot; BI &middot; Kemenkop</span>
+    </div>
+  </div>
+  <div class="foot"><span>Penutup</span><span class="num">11 / 11</span></div>
+</section>
+
+</div>
+
+<script>
+/* ================= Chart builders (data dari makalah) ================= */
+const BLUE="#3E8EDE", BLUE2="#5FA8F5", GOLD="#D9A94C", GREEN="#3FB97F", RED="#E5564B",
+      GRID="#1D3E6E", MUTED="#8FA6C4", INK="#EAF1FA";
+const fmt = n => n.toLocaleString("id-ID");
+
+/* --- Bar chart: koperasi aktif 2021-2024 --- */
+(function(){
+  const data=[{y:"2021",v:127846},{y:"2022",v:130354},{y:"2023",v:130119},{y:"2024",v:131617}];
+  const W=560,H=292,L=66,R=14,T=30,B=44, floor=120000, ceil=134000;
+  const x=i=>L+(W-L-R)*(i+0.5)/data.length;
+  const y=v=>T+(H-T-B)*(1-(v-floor)/(ceil-floor));
+  const bw=(W-L-R)/data.length*0.52;
+  let ticks="";
+  for(const t of [120000,125000,130000,134000]){
+    ticks+=`<line class="gl" x1="${L}" y1="${y(t)}" x2="${W-R}" y2="${y(t)}"/><text x="${L-10}" y="${y(t)+4}" text-anchor="end" class="ax">${fmt(t)}</text>`;
+  }
+  let bars="";
+  data.forEach((d,i)=>{
+    const by=y(d.v), bh=y(floor)-by;
+    const last=i===data.length-1;
+    bars+=`<rect x="${x(i)-bw/2}" y="${by}" width="${bw}" height="${Math.max(bh,2)}" rx="4" fill="${last?BLUE2:BLUE}" opacity="${last?1:.72}"/>`
+        +  `<text x="${x(i)}" y="${by-9}" text-anchor="middle" class="vl">${fmt(d.v)}</text>`
+        +  `<text x="${x(i)}" y="${H-B+22}" text-anchor="middle" class="axl">${d.y}</text>`;
+  });
+  document.getElementById("ch-koperasi").innerHTML =
+  `<svg viewBox="0 0 ${W} ${H}"><style>
+    .gl{stroke:${GRID};stroke-width:1} .ax{fill:${MUTED};font-size:11px} .axl{fill:${INK};font-size:12.5px;font-weight:600}
+    .vl{fill:#fff;font-size:12.5px;font-weight:700}
+  </style>${ticks}${bars}
+    <text x="${L-10}" y="${T-10}" text-anchor="end" class="ax">unit</text>
+  </svg>`;
+})();
+
+/* --- Funnel: adopsi Kopdes Merah Putih --- */
+(function(){
+  const data=[
+    {l:"Berbadan hukum",v:81485,p:"100%"},
+    {l:"Memiliki akun Simkopdes",v:42349,p:"52%"},
+    {l:"Memperbarui profil",v:9317,p:"11,4%"},
+    {l:"Mengajukan proposal bisnis",v:368,p:"0,45%"}
+  ];
+  const W=560,H=292,L=200,R=90,T=14,B=10;
+  const maxS=Math.sqrt(data[0].v);
+  const rows=data.map((d,i)=>{
+    const s=Math.sqrt(d.v)/maxS;
+    const w=18+s*(W-L-R);
+    const yy=T+i*68, bh=44;
+    const col=i===0?BLUE2:[BLUE,GOLD,RED][i-1]||BLUE;
+    return `<rect x="${L}" y="${yy}" width="${w}" height="${bh}" rx="6" fill="${col}" opacity="${1-i*0.06}"/>`
+      +`<text x="${L-12}" y="${yy+bh/2+5}" text-anchor="end" style="fill:${INK};font-size:12.5px;font-weight:600">${d.l}</text>`
+      +`<text x="${L+12}" y="${yy+bh/2+5}" style="fill:#fff;font-size:12.5px;font-weight:800">${d.p}</text>`
+      +`<text x="${L+w+8}" y="${yy+bh/2+5}" style="fill:${MUTED};font-size:12px;font-weight:700">${fmt(d.v)}</text>`;
+  }).join("");
+  document.getElementById("ch-funnel").innerHTML =
+  `<svg viewBox="0 0 ${W} ${H}">${rows}</svg>`;
+})();
+
+/* --- QRIS: two paired bars --- */
+(function(){
+  const W=560,H=248;
+  function pair(cx,label,v1,v2,unit,f1,f2,max,big){
+    const bw=52, gap=16, base=196, h=v=>v/max*(base-46);
+    return `<text x="${cx}" y="24" text-anchor="middle" style="fill:${INK};font-size:13px;font-weight:700">${label}</text>`
+      +`<rect x="${cx-bw-gap/2}" y="${base-h(v1)}" width="${bw}" height="${h(v1)}" rx="4" fill="${BLUE}" opacity=".8"/>`
+      +`<rect x="${cx+gap/2}" y="${base-h(v2)}" width="${bw}" height="${h(v2)}" rx="4" fill="${GOLD}"/>`
+      +`<text x="${cx-bw/2-gap/2}" y="${base-h(v1)-7}" text-anchor="middle" style="fill:${MUTED};font-size:11px;font-weight:700">${f1}</text>`
+      +`<text x="${cx+bw/2+gap/2}" y="${base-h(v2)-7}" text-anchor="middle" style="fill:${GOLD};font-size:11px;font-weight:800">${f2}</text>`
+      +`<text x="${cx-bw/2-gap/2}" y="${base+16}" text-anchor="middle" style="fill:${MUTED};font-size:10.5px">Smt I 2025</text>`
+      +`<text x="${cx+bw/2+gap/2}" y="${base+16}" text-anchor="middle" style="fill:${MUTED};font-size:10.5px">Smt I 2026</text>`
+      +`<text x="${cx}" y="${base+36}" text-anchor="middle" style="fill:${big};font-size:12.5px;font-weight:800">${unit}</text>`;
+  }
+  const a=pair(140,"Jumlah transaksi",6.05,12.55,"+107% YoY","6,05","12,55",13.5,"#3FB97F");
+  const b=pair(420,"Nilai transaksi (Rp T)",579,600.69,"+3,7% YoY","579","600,69",640,"#D9A94C");
+  document.getElementById("ch-qris").innerHTML =
+  `<svg viewBox="0 0 ${W} ${H}">
+    <style>.gl{stroke:${GRID};stroke-width:1}</style>
+    <line class="gl" x1="20" y1="196" x2="540" y2="196" stroke-width="1.5"/>
+    ${a}${b}
+    <text x="68" y="76" style="fill:${MUTED};font-size:10.5px">miliar transaksi</text>
+  </svg>`;
+})();
+
+/* --- LPBBTI line/area chart --- */
+(function(){
+  const data=[["Jan '25",78.50],["Mar '25",80.02],["Apr '25",80.94],["Nov '25",94.85],["Des '25",96.62],["Mar '26",101.00],["Mei '26",103.73],["Jun '26",105.14],["Jul '26",105.63],["Agu '26",106.94]];
+  const W=660,H=300,L=52,R=14,T=26,B=40, max=115;
+  const x=i=>L+(W-L-R)*i/(data.length-1);
+  const y=v=>T+(H-T-B)*(1-v/max);
+  const pts=data.map((d,i)=>[x(i),y(d[1])]);
+  const line=pts.map((p,i)=>(i?"L":"M")+p[0].toFixed(1)+" "+p[1].toFixed(1)).join(" ");
+  const area=line+` L ${pts[9][0]} ${y(0)} L ${pts[0][0]} ${y(0)} Z`;
+  let grid="";
+  for(const t of [0,25,50,75,100]){
+    grid+=`<line x1="${L}" y1="${y(t)}" x2="${W-R}" y2="${y(t)}" stroke="${GRID}" stroke-width="1"/>`
+        + `<text x="${L-8}" y="${y(t)+4}" text-anchor="end" style="fill:${MUTED};font-size:10.5px">${t}</text>`;
+  }
+  let dots="",labels="";
+  data.forEach((d,i)=>{
+    dots+=`<circle cx="${x(i)}" cy="${y(d[1])}" r="4" fill="${i===9?GOLD:BLUE2}" stroke="#0A1B33" stroke-width="2"/>`;
+    labels+=`<text x="${x(i)}" y="${H-B+18}" text-anchor="middle" style="fill:${MUTED};font-size:10px">${d[0]}</text>`;
+    if(i===9) dots+=`<text x="${x(i)-8}" y="${y(d[1])-12}" text-anchor="end" style="fill:${GOLD};font-size:13px;font-weight:800">Rp ${d[1].toFixed(2).replace(".",",")} T</text>`;
+    if(i===0) dots+=`<text x="${x(i)+6}" y="${y(d[1])-10}" style="fill:${MUTED};font-size:11px;font-weight:700">Rp 78,50 T</text>`;
+  });
+  document.getElementById("ch-lpbbti").innerHTML =
+  `<svg viewBox="0 0 ${W} ${H}">
+    <defs><linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${BLUE}" stop-opacity=".38"/><stop offset="1" stop-color="${BLUE}" stop-opacity="0"/></linearGradient></defs>
+    ${grid}<path d="${area}" fill="url(#ga)"/><path d="${line}" fill="none" stroke="${BLUE2}" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    ${dots}${labels}
+    <text x="${L-8}" y="${T-8}" text-anchor="end" style="fill:${MUTED};font-size:10.5px">Rp T</text>
+  </svg>`;
+})();
+
+/* --- TWP90 chart with 5% threshold --- */
+(function(){
+  const data=[["Mar '25",2.77],["Apr '25",2.93],["Jun '25",2.85],["Des '25",4.32],["Agu '26",4.73]];
+  const W=330,H=196,L=38,R=10,T=22,B=30, max=6, thr=5;
+  const x=i=>L+(W-L-R)*i/(data.length-1);
+  const y=v=>T+(H-T-B)*(1-v/max);
+  const line=data.map((d,i)=>(i?"L":"M")+x(i)+" "+y(d[1])).join(" ");
+  let grid="";
+  for(const t of [0,2,4,6]) grid+=`<line x1="${L}" y1="${y(t)}" x2="${W-R}" y2="${y(t)}" stroke="${GRID}"/><text x="${L-6}" y="${y(t)+3}" text-anchor="end" style="fill:${MUTED};font-size:9.5px">${t}%</text>`;
+  let dots="";
+  data.forEach((d,i)=>{
+    dots+=`<circle cx="${x(i)}" cy="${y(d[1])}" r="3.5" fill="${i===4?RED:BLUE2}" stroke="#0A1B33" stroke-width="1.5"/>`
+        + `<text x="${x(i)}" y="${H-B+14}" text-anchor="middle" style="fill:${MUTED};font-size:9.5px">${d[0]}</text>`
+        + `<text x="${x(i)}" y="${y(d[1])-8}" text-anchor="middle" style="fill:${INK};font-size:10px;font-weight:700">${d[1].toFixed(2).replace(".",",")}</text>`;
+  });
+  document.getElementById("ch-twp").innerHTML =
+  `<svg viewBox="0 0 ${W} ${H}">${grid}
+    <line x1="${L}" y1="${y(thr)}" x2="${W-R}" y2="${y(thr)}" stroke="${RED}" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="${W-R}" y="${y(thr)-5}" text-anchor="end" style="fill:${RED};font-size:10px;font-weight:800">Batas OJK 5%</text>
+    <path d="${line}" fill="none" stroke="${RED}" stroke-width="2.2" stroke-linecap="round"/>${dots}
+  </svg>`;
+})();
+
+/* --- SNLIK grouped bars (mini, slide 8) --- */
+(function(){
+  const years=["2024","2025","2026"], lit=[65.43,66.46,69.57], inc=[75.02,80.51,93.61];
+  const W=270,H=128,L=30,R=6,T=14,B=22,max=100;
+  const gw=(W-L-R)/3, x=i=>L+gw*i+gw/2;
+  const y=v=>T+(H-T-B)*(1-v/max);
+  let g="";
+  for(const t of [0,50,100]) g+=`<line x1="${L}" y1="${y(t)}" x2="${W-R}" y2="${y(t)}" stroke="${GRID}"/>`;
+  years.forEach((yr,i)=>{
+    g+=`<rect x="${x(i)-17}" y="${y(lit[i])}" width="14" height="${y(0)-y(lit[i])}" rx="2" fill="${BLUE}"/>`
+     + `<rect x="${x(i)+1}" y="${y(inc[i])}" width="14" height="${y(0)-y(inc[i])}" rx="2" fill="${GOLD}"/>`
+     + `<text x="${x(i)-10}" y="${y(lit[i])-3}" text-anchor="middle" style="fill:${MUTED};font-size:8px">${lit[i].toFixed(1).replace(".",",")}</text>`
+     + `<text x="${x(i)+8}" y="${y(inc[i])-3}" text-anchor="middle" style="fill:${GOLD};font-size:8px;font-weight:700">${inc[i].toFixed(1).replace(".",",")}</text>`
+     + `<text x="${x(i)}" y="${H-6}" text-anchor="middle" style="fill:${MUTED};font-size:9px">${yr}</text>`;
+  });
+  g+=`<rect x="${L}" y="2" width="8" height="8" rx="2" fill="${BLUE}"/><text x="${L+12}" y="9" style="fill:${MUTED};font-size:9px">Literasi</text>`
+   + `<rect x="${L+62}" y="2" width="8" height="8" rx="2" fill="${GOLD}"/><text x="${L+74}" y="9" style="fill:${MUTED};font-size:9px">Inklusi</text>`;
+  document.getElementById("ch-snlik").innerHTML=`<svg viewBox="0 0 ${W} ${H}">${g}</svg>`;
+})();
+
+/* --- TWP90 sparkline (slide 8 card) --- */
+(function(){
+  const data=[2.60,2.77,2.93,2.85,4.32,4.73];
+  const W=270,H=64,T=8,B=6,L=8,R=8, max=5.5;
+  const x=i=>L+(W-L-R)*i/(data.length-1), y=v=>T+(H-T-B)*(1-v/max);
+  const line=data.map((d,i)=>(i?"L":"M")+x(i)+" "+y(d)).join(" ");
+  const yl=y(5);
+  document.getElementById("ch-twp-spark").innerHTML=
+  `<svg viewBox="0 0 ${W} ${H}">
+    <line x1="${L}" y1="${yl}" x2="${W-R}" y2="${yl}" stroke="${RED}" stroke-width="1" stroke-dasharray="4 3" opacity=".8"/>
+    <text x="${W-R}" y="${yl-2}" text-anchor="end" style="fill:${RED};font-size:8.5px;font-weight:700">Batas OJK 5%</text>
+    <path d="${line}" fill="none" stroke="${RED}" stroke-width="2" stroke-linecap="round"/>
+    ${data.map((d,i)=>`<circle cx="${x(i)}" cy="${y(d)}" r="2.6" fill="${i===5?RED:"#0A1B33"}" stroke="${RED}" stroke-width="1.5"/>`).join("")}
+    <text x="${x(5)}" y="${y(4.73)-7}" text-anchor="end" style="fill:${RED};font-size:9.5px;font-weight:800">4,73%</text>
+    <text x="${x(0)}" y="${y(2.6)+11}" text-anchor="start" style="fill:${MUTED};font-size:8.5px">2,60% (Agu '25)</text>
+  </svg>`;
+})();
+</script>
+</body>
+</html>
