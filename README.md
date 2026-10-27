@@ -31,6 +31,7 @@ KoperasiFintech/
 ### `makalah/`
 - **`Makalah_Digitalisasi_Koperasi_dan_Fintech.md`** — makalah awal (fokus Koperasi Desa/Kelurahan Merah Putih).
 - **`Strategi_Digitalisasi_Koperasi_dan_Fintech_-_Perspektif_Umum.md`** — makalah baru, perspektif **koperasi secara umum** (BAB I–V, daftar pustaka, dan lampiran rangka presentasi). File ini yang digunakan untuk makalah/presentasi final.
+- **`Integrasi_Teknologi_Keuangan_Fintech_pada_Koperasi.md`** — makalah pendalaman tema **integrasi fintech pada koperasi** (BAB I–X: pendahuluan, landasan teori, regulasi pasca-UU P2SK/POJK 40 & 47/2024/SEOJK 19/2025, data industri LPBBTI–QRIS–SNLIK–KUR–LPDB, 7 model integrasi, risiko & tata kelola, kajian ilmiah 2021–2026, perspektif internasional, sintesis & rekomendasi, daftar pustaka 101 entri). Semua data periode 2021–2026; klaim tak terverifikasi ditandai.
 
 ### `presentasi/`
 Dipecah menjadi dua subfolder, satu untuk tiap versi makalah:
@@ -42,7 +43,7 @@ Dipecah menjadi dua subfolder, satu untuk tiap versi makalah:
 
 #### `versi_baru/` — presentasi dari **Strategi_Digitalisasi_Koperasi_dan_Fintech_-_Perspektif_Umum.md** (koperasi secara umum)
 - `Slide_Presentasi.html` — 12 slide, gaya *consulting* (palet Goldman Sachs: navy `#051C2C`/biru, hairline, tanpa gradient/emoji), grafik SVG inline (bar, grouped bar, horizontal bar, line+area, progress bar).
-- `Slide_Presentasi_Strategi_Digitalisasi.pdf` — PDF final 12 halaman (1280×720), di-*render* dari HTML di atas.
+- `Slide_Presentasi_Strategi_Digitalisasi.pdf` — PDF final 13 halaman (1280×720), di-*render* dari HTML di atas.
 - Struktur mengikuti **LAMPIRAN: RANGKA PRESENTASI** di akhir makalah (12 slide untuk ±20 menit).
 
 ### `sumber_data/`
